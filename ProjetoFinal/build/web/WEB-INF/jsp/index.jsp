@@ -27,16 +27,28 @@
 
                 <!-- Login Form -->
                 <form action="logar" method="post">
-                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-                    <input type="submit" class="fadeIn fourth" value="Log In">
+                    <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="login">
+                    <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="password">
+                    <button type="submit" class="fadeIn fourth">Login In</button>
+                    <c:if test="${not empty errorMensager}" >  
+                        <div style="color: red;" >
+                            ${errorMensager}
+                        </div>
+                    </c:if>
+                        
+                        
+
+                    
                 </form>
 
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <a class="underlineHover" href="./pica">Forgot Password?</a>
+                    <a class="underlineHover" href="./pica">Nao possui cadastro?</a>
                 </div>
                 
+                <div>
+                    
+                </div>
             </div>
         </div>
 

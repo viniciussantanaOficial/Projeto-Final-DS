@@ -25,6 +25,7 @@ public class UsuarioDao {
            
            ResultSet rs = ps.executeQuery();
            if(rs.next()){
+               
                rs.close();
                ps.close();
                c.close();

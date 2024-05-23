@@ -75,6 +75,7 @@ public class LoginController extends HttpServlet {
                 RequestDispatcher d = getServletContext().getRequestDispatcher(next);
                 d.forward(request, response);
             } else {
+                request.setAttribute("errorMensager", "usuario ou senha errado");
                 System.out.println("False");
                 String next = "/WEB-INF/jsp/index.jsp";
                 RequestDispatcher d = getServletContext().getRequestDispatcher(next);
