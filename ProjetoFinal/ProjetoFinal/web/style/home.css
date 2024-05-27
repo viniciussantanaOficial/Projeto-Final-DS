@@ -1,0 +1,72 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+
+}
+
+.header-top {
+
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3vh;
+    padding: 0 auto;
+
+}
+
+.h1-header {
+
+    color: white;
+
+}
+
+p{
+
+    margin-top: 70px;
+}
+
+.header-low {
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-content: center;
+    margin-top: 0px;
+    height: 85px;
+    gap: 100px;
+    box-shadow: inset 1px 1px 4px 0 rgba(20, 20, 20, 20);
+}
+
+.header-low .nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#buscar {
+    width: 22vh;
+    height: 3vh;
+    border-radius: 7px;
+    box-shadow: inset 1px 1px 4px 0 rgba(10, 10, 10, 0.2);
+    border: white;
+
+}
+
+.inputIcones {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.nav{
+
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
