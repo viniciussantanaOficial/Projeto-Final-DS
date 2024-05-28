@@ -15,15 +15,27 @@
             <link href="./style/home-main.css" rel="stylesheet" type="text/css" />
             <link href="./style/home.css" rel="stylesheet" type="text/css" />
             <link href="./style/pre_carrinho.css" rel="stylesheet" type="text/css" />
-            <link href="./style/footer.css" rel="stylesheet" type="text/css"/>
+            <link href="./style/Tela_inicial.css" rel="stylesheet" type="text/css"/>
+            <link href="./style/footer.css" rel="stylesheet" type="text/css" />
         </head>
 
         <body>
 
 
             <header>
-                <div class="header-top"></div>
-                <h1>ola</h1>
+                <nav>
+                    <a class="logo" href="/">Ls_video</a>
+                    <u class="nav-list">
+                       
+                        <li> <a href="/"></a>Vinhos </li>
+                        <li> <a href="/"></a>Perfumes </li>
+                        <li> <a href="/"></a>Eletronicos </li>
+                    </u>
+                    <div class="icones-header">
+                        <input class="buscar-header" type="text"><i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </nav>
             </header>
             <main>
                 <div class="main-top">
@@ -57,160 +69,398 @@
                     </div>
 
                     <div class="produtos-main">
-                        <div class="card-deck">
 
-                            <div id="card" class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
+                        <section class="pt-5 pb-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h3 class="mb-3">Carousel cards title </h3>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2"
+                                            role="button" data-slide="prev">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2"
+                                            role="button" data-slide="next">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="carouselExampleIndicators2" class="carousel slide"
+                                            data-ride="carousel">
+
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <div class="row">
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="row">
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="row">
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Special title treatment</h4>
+                                                                    <p class="card-text">With supporting text below as a
+                                                                        natural lead-in to additional content.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
-                                </div>
-
-                            </div>
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
-                                </div>
-
-                            </div>
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
-                                </div>
-
-                            </div>
-                        </div>
+                        </section>
 
                     </div>
 
-
-                    <div class="produtos-main">
-                        <div class="card-deck">
-
-                            <div id="card" class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
+                    <section class="pt-5 pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3 class="mb-3">Carousel cards title </h3>
                                 </div>
-                            </div>
-
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
+                                <div class="col-6 text-right">
+                                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2"
+                                        role="button" data-slide="prev">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </a>
+                                    <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button"
+                                        data-slide="next">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
                                 </div>
+                                <div class="col-12">
+                                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-                            </div>
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="row">
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row">
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row">
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Special title treatment</h4>
+                                                                <p class="card-text">With supporting text below as a
+                                                                    natural lead-in to additional content.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                            </div>
-                            <div class="card card-home-item">
-                                <img class="card-img-top" src="./img/shopping 1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vinho reservado</h5>
-                                    <p class="card-text"></p>
-                                </div>
-
                             </div>
                         </div>
+                    </section>
 
-                    </div>
 
-                    
+
+                </div>
+
+
 
 
             </main>
 
 
-            
+
             <footer class="bg-body-tertiary text-center">
-              
+
                 <div class="container p-4">
-                  
+
                     <section class="mb-4">
-                     
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-facebook-f"></i></a>
 
-                      
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-twitter"></i></a>
 
-                       
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-google"></i></a>
 
-                       
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-instagram"></i></a>
 
-                        
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-linkedin-in"></i></a>
 
-                       
+
                         <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                 class="fab fa-github"></i></a>
                     </section>
-                   
 
-                   
+
+
                     <section class="">
                         <form action="">
-                           
+
                             <div class="row d-flex justify-content-center">
-                              
+
                                 <div class="col-auto">
                                     <p class="pt-2">
                                         <strong>Sign up for our newsletter</strong>
                                     </p>
                                 </div>
-                             
 
-                               
+
+
                                 <div class="col-md-5 col-12">
-                                   
+
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <input type="email" id="form5Example24" class="form-control" />
                                         <label class="form-label" for="form5Example24">Email address</label>
                                     </div>
                                 </div>
-                               
 
-                               
+
+
                                 <div class="col-auto">
-                                   
+
                                     <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
                                         Subscribe
                                     </button>
                                 </div>
-                                
+
                             </div>
-                            
+
                         </form>
                     </section>
-                    
 
-                    
+
+
                     <section class="mb-4">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
@@ -218,13 +468,13 @@
                             harum corrupti dicta, aliquam sequi voluptate quas.
                         </p>
                     </section>
-                    
 
-                    
+
+
                     <section class="">
-                        
+
                         <div class="row">
-                           
+
                             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                 <h5 class="text-uppercase">Links</h5>
 
@@ -243,9 +493,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            
 
-                            
+
+
                             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                 <h5 class="text-uppercase">Links</h5>
 
@@ -264,9 +514,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            
 
-                            
+
+
                             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                 <h5 class="text-uppercase">Links</h5>
 
@@ -285,7 +535,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                 <h5 class="text-uppercase">Links</h5>
 
@@ -304,21 +554,21 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                         </div>
-                        
+
                     </section>
-                    
+
                 </div>
-               
 
-                
-               
-               
+
+
+
+
             </footer>
-          
 
-        
+
+
 
 
         </body>

@@ -4,3 +4,72 @@ body{
     background-color:white; 
 }
 
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+
+}
+
+a:hover{
+
+    opacity: 0.7;
+
+}
+
+.logo{
+
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #23232e;
+    height: 8vh;
+
+}
+
+.nav-list{
+
+    list-style: none;
+    display: flex;
+    color: white;
+}
+
+.nav-list li{
+
+    letter-spacing: 3px;
+    margin-left: 32px;
+    
+}
+
+.fa-magnifying-glass{
+
+    color: blue;
+}
+
+.icones-header{
+
+    
+}
+
+.buscar-header{
+
+    border: #23232e;
+    border-radius: 4px;
+    
+}
+
