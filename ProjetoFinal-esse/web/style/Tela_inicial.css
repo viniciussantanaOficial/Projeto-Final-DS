@@ -61,9 +61,10 @@ nav{
     color: blue;
 }
 
-.icones-header{
+.icones-header2{
 
-    
+    display: flex;
+    align-items: center;
 }
 
 .buscar-header{
@@ -72,4 +73,23 @@ nav{
     border-radius: 4px;
     
 }
+
+.fa-user{
+
+    color: blue;
+}
+
+.fa-solid{
+
+    color: rgb(0, 0, 0);
+}
+
+.fa-magnifying-glass{
+
+    right: 100vh;
+}
+
+
+
+
 

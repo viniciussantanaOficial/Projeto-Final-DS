@@ -107,3 +107,47 @@ p{
     display: flex;
 }
 
+.fa-cart-shopping:before, .fa-shopping-cart:before{
+
+    content: "\f07a";
+    padding: 10px;
+    right: 0;
+    position: absolute;
+    top: 22.3vh;
+    height:4vh;
+    width: 4vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+
+}
+
+.fa-solid {
+    color: black;
+}
+
+.card-title{
+
+    top: 207px;
+    right: 60px;
+    position: absolute;
+}
+
+.fa-cart-shopping2{
+
+    color: black;
+}
+
+.proximo{
+
+    
+}
+
+.proximo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
