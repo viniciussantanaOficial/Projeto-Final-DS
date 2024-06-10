@@ -21,29 +21,56 @@ import java.sql.Date;
 
 
 public class UsuarioDao {
-    public boolean logar(String usuario, String senha){
-        Connection c = Conexao.getConn();
+    public int logar(String usuario, String senha){
+        int id = 0;
+        
        try{
+           Connection c = Conexao.getConn();
            PreparedStatement ps = c.prepareStatement("select * from usuarios where usuario = ? and senha = ?");
            ps.setString(1, usuario);
            ps.setString(2, senha);
            
            ResultSet rs = ps.executeQuery();
            if(rs.next()){
+           id = rs.getInt("id_usuario");
+           }
+               
                rs.close();
                ps.close();
                c.close();
                System.out.println("Login certo");
-               return true;
-           } else{
-               rs.close();
-               ps.close();
-               c.close();
-           }
        }catch(SQLException e ){
            e.printStackTrace();
-       }    
-        return false;
+       } 
+       return id;
+    }
+    
+    public UsuarioBean pegarUsuarioId(int id){
+        UsuarioBean u = new UsuarioBean();
+        
+        try{
+            Connection c = Conexao.getConn();
+           PreparedStatement ps = c.prepareStatement("select * from usuarios where id_usuario = ?");
+           ps.setInt(1, id);
+           
+           ResultSet rs = ps.executeQuery();
+           if(rs.next()){
+           u.setId_usuario(rs.getInt("id_usuario"));
+           u.setNome(rs.getString("nome"));
+           u.setCpf(rs.getString("cpf"));
+           u.setData_nascimento(rs.getDate("data_nascimento"));
+           u.setEmail(rs.getString("email"));
+           u.setTelefone(rs.getString("telefone"));
+           u.setUsuario(rs.getString("usuario"));
+           u.setAdm(rs.getString("adm"));
+           
+           }
+           
+        } catch(SQLException e ){
+          e.printStackTrace();
+       } 
+        
+        return u;
     }
     
     public boolean insertCliente(UsuarioBean usuario) {
@@ -73,5 +100,7 @@ public class UsuarioDao {
         }
         return false;
     }
+    
+    
     
 }

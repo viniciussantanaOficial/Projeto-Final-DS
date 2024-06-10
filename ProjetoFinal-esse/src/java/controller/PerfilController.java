@@ -20,8 +20,8 @@ import modoDao.UsuarioDao;
  *
  * @author Senai
  */
-public class LoginController extends HttpServlet {
-
+public class PerfilController extends HttpServlet {
+    UsuarioDao ud = new UsuarioDao();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,9 +33,23 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/WEB-INF/jsp/index.jsp";
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
-        d.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        Cookie[] cookies = request.getCookies();
+        int id = 0;
+        
+        for(Cookie cookie : cookies){
+            if(cookie.getName().equals("usuario") && !(cookie.getValue() == null)){
+                id = Integer.parseInt(cookie.getValue());
+            }
+        }
+        UsuarioBean us = new UsuarioBean();
+        if(id > 0){
+            us = ud.pegarUsuarioId(id);           
+        }
+        request.setAttribute("usuario", us);
+       String perfil = "/WEB-INF/jsp/Perfil.jsp";
+       RequestDispatcher pageP = getServletContext().getRequestDispatcher(perfil);
+       pageP.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,31 +78,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        
-        if(url.equals("/logar")){
-          UsuarioBean usuariobean = new UsuarioBean();
-          UsuarioDao usuariodao = new UsuarioDao();
-          
-          usuariobean.setUsuario(request.getParameter("usuario"));
-           usuariobean.setSenha(request.getParameter("senha"));
-           
-          int id = usuariodao.logar(usuariobean.getUsuario(), usuariobean.getSenha());
-           
-           if (id > 0) {
-               
-               Cookie loginCookie = new Cookie("usuario", Integer.toString(id));
-               response.addCookie(loginCookie);
-               usuariobean = usuariodao.pegarUsuarioId(id);
-               if(!(usuariobean.getAdm().equals("adm"))){
-                   response.sendRedirect("./home");
-               }else{
-                   response.sendRedirect("./telaadmm");
-               }
-           }else{
-               
-           }
-        }
+        processRequest(request, response);
     }
 
     /**

@@ -9,18 +9,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modoBean.UsuarioBean;
-import modoDao.UsuarioDao;
 
 /**
  *
  * @author Senai
  */
-public class LoginController extends HttpServlet {
+public class TelaAdmController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,9 +30,10 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/WEB-INF/jsp/index.jsp";
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
-        d.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+       String url = "/WEB-INF/jsp/Painel_Adm.jsp";
+       RequestDispatcher pageP = getServletContext().getRequestDispatcher(url);
+       pageP.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,31 +62,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        
-        if(url.equals("/logar")){
-          UsuarioBean usuariobean = new UsuarioBean();
-          UsuarioDao usuariodao = new UsuarioDao();
-          
-          usuariobean.setUsuario(request.getParameter("usuario"));
-           usuariobean.setSenha(request.getParameter("senha"));
-           
-          int id = usuariodao.logar(usuariobean.getUsuario(), usuariobean.getSenha());
-           
-           if (id > 0) {
-               
-               Cookie loginCookie = new Cookie("usuario", Integer.toString(id));
-               response.addCookie(loginCookie);
-               usuariobean = usuariodao.pegarUsuarioId(id);
-               if(!(usuariobean.getAdm().equals("adm"))){
-                   response.sendRedirect("./home");
-               }else{
-                   response.sendRedirect("./telaadmm");
-               }
-           }else{
-               
-           }
-        }
+        processRequest(request, response);
     }
 
     /**

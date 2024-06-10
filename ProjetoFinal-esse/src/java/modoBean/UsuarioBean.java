@@ -16,6 +16,7 @@ import java.sql.Date;
 public class UsuarioBean {
     
     private int id_usuario;
+    private static int id_usuarioStatic;
     private String nome;
     private String senha;
     private String usuario;
@@ -46,6 +47,14 @@ public class UsuarioBean {
 
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public static int getId_usuarioStatic() {
+        return id_usuarioStatic;
+    }
+
+    public static void setId_usuarioStatic(int id_usuarioStatic) {
+        UsuarioBean.id_usuarioStatic = id_usuarioStatic;
     }
 
     public String getNome() {
@@ -111,6 +120,6 @@ public class UsuarioBean {
     public void setEmail(String email) {
         this.email = email;
     }
-    
 
+   
 }
