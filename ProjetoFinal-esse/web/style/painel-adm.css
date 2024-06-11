@@ -1,0 +1,49 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 49%, rgba(181,181,181,1) 96%);
+
+}
+
+header{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+main{
+
+    color: white;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 50px;
+
+    
+}
+
+.main-top{
+
+    height: 70vh;
+    width: 50vh;
+    color: black;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.adicionar-produtos{
+
+    height: auto;
+    width: auto;
+    display: grid;
+    align-items: center;
+    align-content: space-evenly;
+}

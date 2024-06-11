@@ -9,7 +9,8 @@ usuario varchar (45) not null,
 telefone char(15),
 data_nascimento date,
 cpf char(14),
-adm varchar(50) not null,
+email varchar(100) not null,
+adm varchar(50) default 'user',
 unique(usuario,cpf,telefone)
 );
 
