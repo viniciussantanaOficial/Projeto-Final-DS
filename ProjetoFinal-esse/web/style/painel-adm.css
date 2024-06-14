@@ -47,3 +47,47 @@ main{
     align-items: center;
     align-content: space-evenly;
 }
+
+.separar-title{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-adm{
+
+    display: block;
+    padding: 14vh;
+}
+
+.main-left{
+
+    color: black;
+    left: 10px;
+    position: absolute;
+    display: grid;
+    top: 35vh;
+    gap: 40px;
+}
+
+
+
+.user-p-adm{
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    align-items: center;
+    color: black;
+}
+
+.home-p-adm{
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    align-items: center;
+    color: black;
+}
+

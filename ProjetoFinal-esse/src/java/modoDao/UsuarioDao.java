@@ -33,6 +33,7 @@ public class UsuarioDao {
            ResultSet rs = ps.executeQuery();
            if(rs.next()){
            id = rs.getInt("id_usuario");
+           
            }
                
                rs.close();

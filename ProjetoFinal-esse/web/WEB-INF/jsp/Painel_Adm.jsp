@@ -8,6 +8,10 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Welcome to Spring Web MVC project</title>
             <link href="./style/painel-adm.css" rel="stylesheet" type="text/css" />
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/446d1f4167.js" crossorigin="anonymous"></script>
         </head>
 
         <body>
@@ -19,27 +23,45 @@
 
             <main>
 
+                <div class="main-left">
+                    <div class="user-painel-adm">
+                 <a class="user-p-adm" href=""><i class="fa-solid fa-user"></i><h2>Login</h2></a> 
+                </div>
+                <div class="home-adm">
+               <a class="home-p-adm" href=""><i class="fa-solid fa-house"></i> <h2>Home</h2></a>
+                </div>
+                </div>
+
                 <div class="main-top">
-                    <div class="main-adm">
-                        <h3> Gerenciar produtos</h3>
-                    </div>
-                    <div class="adicionar-produtos">
                     <div class="gerenciar-main">
-                        <div class="nome-produto">
-                            <h3>Nome do produto</h3>
-                            <input type="text">
+                        <div class="separar-title">
+                            <h3> Gerenciar produtos</h3>
                         </div>
-                        <div class="Categoria-produto">
-                            <h3>Categoria do produto</h3>
-                            <input type="text">
-                        </div>
-                        <div class="img-produto">
-                            <h3>Imagem do produto</h3>
-                            <input type="text">
+                        <div class="inputs-adm">
+                            <div class="nome-produto">
+                                <h3>Nome do produto</h3>
+                                <input type="text">
+                            </div>
+                            <div class="Categoria-produto">
+                                <h3>Categoria do produto</h3>
+                                <select>
+                                    <option value="opcao1">Vinhos</option>
+                                    <option value="opcao2">Perfumes</option>
+                                    <option value="opcao3">Eletronicos</option>
+                                </select>
+                            </div>
+                            <div class="escolher-arquivo">
+                                <h3>Escolha um arquivo</h3>
+                                <input type="file">
+                            </div>
+                            <div class="Preco-produto">
+                                <h3>preco do produto</h3>
+                                <input type="text">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
 
                 <div class="main-top">
                     <div class="main-adm">
@@ -58,6 +80,7 @@
                         .
                     </div>
                 </div>
+
 
             </main>
 
