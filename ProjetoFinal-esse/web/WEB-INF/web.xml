@@ -41,10 +41,6 @@
         <servlet-class>controller.PerfilController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TelaAdm</servlet-name>
-        <servlet-class>controller.TelaAdm</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>TelaAdmController</servlet-name>
         <servlet-class>controller.TelaAdmController</servlet-class>
     </servlet>
@@ -105,12 +101,12 @@
         <url-pattern>/perfil</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TelaAdm</servlet-name>
+        <servlet-name>TelaAdmController</servlet-name>
         <url-pattern>/telaadm</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
+        <servlet-mapping>
         <servlet-name>TelaAdmController</servlet-name>
-        <url-pattern>/telaadmm</url-pattern>
+        <url-pattern>/cadastrarProduto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Tela_VinhoController</servlet-name>

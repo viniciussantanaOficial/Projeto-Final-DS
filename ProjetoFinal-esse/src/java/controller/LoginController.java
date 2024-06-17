@@ -83,7 +83,7 @@ public class LoginController extends HttpServlet {
                if(!(usuariobean.getAdm().equals("adm"))){
                    response.sendRedirect("./home");
                }else{
-                   response.sendRedirect("./telaadmm");
+                   response.sendRedirect("./telaadm");
                }
            }else{
                

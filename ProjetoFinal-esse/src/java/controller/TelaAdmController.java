@@ -9,16 +9,21 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modoBean.ProdutoBean;
+import modoDao.ProdutoDao;
 
 /**
  *
  * @author Senai
  */
+@MultipartConfig
 public class TelaAdmController extends HttpServlet {
-
+    ProdutoDao produtodao = new ProdutoDao();
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -62,7 +67,19 @@ public class TelaAdmController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String url = request.getServletPath();
+        
+        if(url.equals("/cadastrarProduto")) {
+            ProdutoBean produtobean = new ProdutoBean();
+            produtobean.setNome(request.getParameter("nome-produto"));
+            produtobean.setCategoria(Integer.parseInt(request.getParameter("select-categoria")));
+            produtobean.setValor(Float.parseFloat(request.getParameter("valor")));
+            produtobean = produtodao.adicionarImagem(produtobean, request.getPart("part"));
+            
+            produtodao.create(produtobean);
+            response.sendRedirect("./telaadm");
+        }
     }
 
     /**

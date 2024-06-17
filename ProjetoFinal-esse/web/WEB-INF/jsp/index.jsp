@@ -43,7 +43,7 @@
 
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <a class="underlineHover" href="./home">Nao possui cadastro?</a>
+                    <a class="underlineHover" href="./cadastro">Nao possui cadastro?</a>
                 </div>
                 
                 <div>
