@@ -18,42 +18,40 @@
 
     <body>
 
-      <div class="carrinho">
-        <div class="cabecario-carrinho">
-          <button><i class="fa-solid fa-cart-shopping"></i></button>
-          <h3>Carrinho</h3>
-        </div>
-        <ul>
-          <li class="carrinho-item">
-            <div class="imagem">
-              <img src="./img/o.21479.jpg" alt="">
-            </div>
-            <div class="info-separator">
+        <div class="carrinho">
+          <div class="cabecario-carrinho">
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+            <h3>Carrinho</h3>
+          </div>
+          <ul>
+            <li class="carrinho-item">
+              <div class="imagem">
+                <img src="./img/o.21479.jpg" alt="">
+              </div>
               <div class="info">
-                <h4>teste</h4>
+                <div class="separar-carrinho">
+                <h4>Vinhos</h4>
               </div>
-              <div class="detalhes">
-                <div class="tempo">
-                  <i class="bx bxs-timer"></i>
-                  <span>categoria</span>
+                <div class="detalhes">
+                  <div class="categoria-carrinho">
+                    <span>Bebidas</span>
+                  </div>
+                  <div class="preco">
+                    <h6>R$30,00</h6>
+                  </div>
                 </div>
-                <div class="status">
-                  <i class="bx bxs-package"></i>
-                  <span>vinho</span>
-                </div>
-              </div>
-              <div class="Preco">
-                <p>R$:25,50</p>
-                <div class="contador">
-                  <i class="bx bxs-minus"></i>
-                  <i class="bx bxs-plus"></i>
+                <div class="separador-menos-mais">
+                  <button class="separador-mais"><h3>+</h3></button>
+                 <p>1</p>
+                  <button class="separador-menos"><h3>-</h3></button>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
 
-    </body>
+          <button class="button-pagar-carrinho">Pagar R$30,00</button>
+        </div>
+      </body>
+      
 
     </html>

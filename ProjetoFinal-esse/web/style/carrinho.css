@@ -6,8 +6,9 @@
    outline: none;
    user-select: none;
    box-sizing: border;
+   list-style: none;
 }
-
+ 
 
 body{
 
@@ -61,7 +62,8 @@ body{
 }
 
 .carrinho .carrinho-item{
-    display: flex;
+
+    display:  flex;
     background-color: #fff;
     position: relative;
     width: 100%;
@@ -77,6 +79,9 @@ body{
     width: 75px;
     height: 75px;
     border: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .carrinho .carrinho-item img{
@@ -84,7 +89,104 @@ body{
     height: 100%;
 }
 
-.info-separator {
+.carrinho .carrinho-item .info{
+    
+    width: 60%;
+    padding: 14px;
+ 
+}
+
+.carrinho .carrinho-item h4{
+
+    color: black;
+    font: 700 1.25rem 'Poppins';
+
+}
+
+.carrinho .carrinho-item .detalhes{
+
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+}
+
+.carrinho .carrinho-item .detalhes i{
+
+    font-size: 1.0625rem 'Poppins';
+}
+
+.carrinho .carrinho-item .detalhes span{
+
+    font-size: 1.075rem 'Poppins';
+    color: black;
+}
+
+.carrinho .carrinho-item .preco{
+
+    color: black;
+    font-size: 1.125 'Poppins';
+    margin-top: 2px;
+}
+
+.carrinho .carrinho-item .separador-menos-mais{
+
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    display: flex;
+}
+
+.carrinho .carrinho-item .separador-menos-mais i{
+
+    cursor: pointer;
+    width: 25px;
+    height: 35px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 35px;
+    background: black;
+    color: white;
+   
+
+}
+
+.carrinho .carrinho-item .separador-menos-mais span{
+
+    margin: 0 6px;
+    color: gray;
+    font-size: 1rem 'Poppins';
+
+}
+
+.carrinho .carrinho-item .separador-mais{
+
+    background-color: black;
+    color: white;
+  
+}
+
+.carrinho .carrinho-item .separador-menos{
+
+    background-color: black;
+    color: white;
+    
+}
+
+.carrinho .button-pagar-carrinho{
+
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    color: white;
+    padding: 15px 0;
+    background-color: black;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: .3s;
+
+}
+
+.carrinho .button-pagar-carrinho:hover{
+
+    background-color: #2a2f43f1;
 }

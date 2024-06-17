@@ -28,9 +28,9 @@
                     <u class="nav-list">
                        
 
-                        <li> <a href="/"></a>Vinhos </li>
-                        <li> <a href="/"></a>Perfumes </li>
-                        <li> <a href="/"></a>Eletronicos </li>
+                        <a href="./Tela_Vinhos2"><li>Vinhos </li></a>
+                        <a href="./Tela_Perfumes"><li>Perfumes </li></a>
+                        <a href="./Tela_Eletronicos"><li>Eletronicos </li></a>
                         
                     </u>
                     

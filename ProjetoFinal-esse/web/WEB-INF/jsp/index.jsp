@@ -29,7 +29,7 @@
                 <form action="logar" method="post">
                     <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="login">
                     <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="password">
-                    <button type="submit" class="fadeIn fourth">Login In</button>
+                   <button type="submit" class="fadeIn fourth">Login In</button>
                     <c:if test="${not empty errorMensager}" >  
                         <div style="color: red;" >
                             ${errorMensager}
@@ -43,7 +43,7 @@
 
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <a class="underlineHover" href="./cadastro">Nao possui cadastro?</a>
+                    <a class="underlineHover" href="./home">Nao possui cadastro?</a>
                 </div>
                 
                 <div>
