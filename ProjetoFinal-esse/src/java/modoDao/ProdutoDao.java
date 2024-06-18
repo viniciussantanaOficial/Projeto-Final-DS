@@ -9,6 +9,7 @@ import conexao.Conexao;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -71,6 +72,15 @@ public class ProdutoDao {
             while (rs.next()) {
                 ProdutoBean p = new ProdutoBean();
                 p.setId_produto(rs.getInt("id_produto"));
+                p.setNome(rs.getString("nome"));
+                p.setValor(rs.getFloat("valor"));
+                p.setCategoria(rs.getInt("categoria_id"));
+                Blob imagemBlob = rs.getBlob("imagem");
+                if (imagemBlob != null) {
+                    byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
+                    p.setImagem(imagemBytes);
+                }
+                produtos.add(p);
                 
                 produtos.add(p);
             }

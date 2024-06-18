@@ -1,11 +1,12 @@
 <%-- Document : Painel_Adm Created on : 10/06/2024, 14:35:16 Author : Senai --%>
 
-    <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html>
 
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta http-equiv="C ontent-Type" content="text/html; charset=UTF-8">
             <title>Welcome to Spring Web MVC project</title>
             <link href="./style/painel-adm.css" rel="stylesheet" type="text/css" />
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
