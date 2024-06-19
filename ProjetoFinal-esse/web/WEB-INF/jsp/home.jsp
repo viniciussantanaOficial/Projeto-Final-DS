@@ -135,10 +135,10 @@
                                             <div class="carousel-item">
                                                 <div class="row">
 
+                                                    <c:forEach items="${produto}" var="produto">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="card">
-                                                            <img class="img-fluid" alt="100%x280"
-                                                                 src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                                            <img style="width: 300px; height: 200px" class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280">
                                                             <div class="card-body">
                                                                 <h4 class="card-title">Special title treatment</h4>
                                                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -147,6 +147,7 @@
 
                                                         </div>
                                                     </div>
+                                                </c:forEach>
                                                     <div class="col-md-4 mb-3">
                                                         <div class="card">
                                                             <img class="img-fluid" alt="100%x280"
@@ -158,6 +159,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                   
                                                     <div class="col-md-4 mb-3">
                                                         <div class="card">
                                                             <img class="img-fluid" alt="100%x280"
@@ -170,7 +172,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                    
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
@@ -550,43 +552,6 @@
 
 
 
-            <div class="carrinho">
-                <div class="cabecario-carrinho">
-                    <button><i class="fa-solid fa-cart-shopping"></i></button>
-                    <h3>Carrinho</h3>
-                </div>
-                <ul>
-                    <li class="carrinho-item">
-                        <div class="imagem">
-                            <img src="./img/o.21479.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="separar-carrinho">
-                                <h4>Vinhos</h4>
-                            </div>
-                            <div class="detalhes">
-                                <div class="categoria-carrinho">
-                                    <span>Bebidas</span>
-                                </div>
-                                <div class="preco">
-                                    <h6>R$30,00</h6>
-                                </div>
-                            </div>
-                            <div class="separador-menos-mais">
-                                <button class="separador-mais">
-                                    <h3>+</h3>
-                                </button>
-                                <p>1</p>
-                                <button class="separador-menos">
-                                    <h3>-</h3>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-                <button class="button-pagar-carrinho">Pagar R$30,00</button>
-            </div>
 
 
 

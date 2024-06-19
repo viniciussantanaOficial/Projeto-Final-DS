@@ -84,3 +84,9 @@ p{
     height: 20vh;
 }
 
+img .img-fluid{
+
+    width: auto;
+    height: auto;
+}
+

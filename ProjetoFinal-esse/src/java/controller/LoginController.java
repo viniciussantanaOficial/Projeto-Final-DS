@@ -79,8 +79,8 @@ public class LoginController extends HttpServlet {
                
                Cookie loginCookie = new Cookie("usuario", Integer.toString(id));
                response.addCookie(loginCookie);
-               usuariobean = usuariodao.pegarUsuarioId(id);
-               if(!(usuariobean.getAdm().equals("adm"))){
+
+               if(!UsuarioBean.isAdmS()){
                    response.sendRedirect("./home");
                }else{
                    response.sendRedirect("./telaadm");

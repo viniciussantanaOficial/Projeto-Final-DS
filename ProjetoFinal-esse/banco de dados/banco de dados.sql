@@ -1,3 +1,4 @@
+DROP database ls_video;
 create database ls_video;
 use ls_video;
 
@@ -10,9 +11,13 @@ telefone char(15),
 data_nascimento date,
 cpf char(14),
 email varchar(100) not null,
-adm varchar(50) default 'user',
+adm bool default false,
 unique(usuario,cpf,telefone)
 );
+
+insert into usuarios(nome,senha,usuario,telefone,data_nascimento,cpf,email,adm) 
+VALUES ('vinicius', '9994', 'admin', '9994', '2006-12-19', '13785179979', 'admin@gmail.com', true);
+
 
 create table enderecos(
 id_endereco int auto_increment primary key,
@@ -53,6 +58,7 @@ id_categoria int auto_increment primary key,
 nome varchar(45)
 );
 
+
 alter table produtos add constraint categoria_id foreign key (categoria_id) references categorias (id_categoria);
 
 create table pedidos_produtos(
@@ -62,6 +68,8 @@ produto_id int,
 quantidade tinyint,
 preco_unitario float (8,2)
 );
+
+insert into categorias(nome) values('bebidas'),('perfumes');
 
 alter table pedidos_produtos add constraint pedido_id foreign key (pedido_id) references pedidos (id_pedido);
 

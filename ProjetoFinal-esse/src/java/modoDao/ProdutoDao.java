@@ -79,9 +79,7 @@ public class ProdutoDao {
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
                     p.setImagem(imagemBytes);
-                }
-                produtos.add(p);
-                
+                }                
                 produtos.add(p);
             }
             

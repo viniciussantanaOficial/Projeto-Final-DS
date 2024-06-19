@@ -25,9 +25,21 @@ public class UsuarioBean {
     private String cpf;
     private String adm;
     private String email;
-
+    private static boolean admS;
+    
     public UsuarioBean() {
     }
+
+    public static boolean isAdmS() {
+        return admS;
+    }
+
+    public static void setAdmS(boolean admS) {
+        UsuarioBean.admS = admS;
+    }
+
+
+    
 
     public UsuarioBean(int id_usuario, String nome, String senha, String usuario, String telefone, Date data_nascimento, String cpf, String adm, String email) {
         this.id_usuario = id_usuario;

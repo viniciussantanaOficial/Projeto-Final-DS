@@ -23,7 +23,7 @@ import java.sql.Date;
 public class UsuarioDao {
     public int logar(String usuario, String senha){
         int id = 0;
-        
+            
        try{
            Connection c = Conexao.getConn();
            PreparedStatement ps = c.prepareStatement("select * from usuarios where usuario = ? and senha = ?");
@@ -32,7 +32,8 @@ public class UsuarioDao {
            
            ResultSet rs = ps.executeQuery();
            if(rs.next()){
-           id = rs.getInt("id_usuario");
+                id = rs.getInt("id_usuario");
+                UsuarioBean.setAdmS(rs.getBoolean("adm"));
            
            }
                
@@ -77,7 +78,7 @@ public class UsuarioDao {
     public boolean insertCliente(UsuarioBean usuario) {
         String senha = usuario.getSenha();
 //        String hashedSenha = encoder.encode(senha);
-
+        
         try {
             String sql = "INSERT INTO usuarios (nome, senha, usuario, email, telefone, data_nascimento, cpf) VALUES (?, ?, ?, ?, ?, ?, ?)";
             Connection c = Conexao.getConn();
