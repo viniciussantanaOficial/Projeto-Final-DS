@@ -60,6 +60,10 @@
         <servlet-name>Tela_EletronicosController</servlet-name>
         <servlet-class>controller.Tela_EletronicosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModeloController</servlet-name>
+        <servlet-class>controller.ModeloController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -104,7 +108,7 @@
         <servlet-name>TelaAdmController</servlet-name>
         <url-pattern>/telaadm</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>TelaAdmController</servlet-name>
         <url-pattern>/cadastrarProduto</url-pattern>
     </servlet-mapping>
@@ -123,6 +127,10 @@
     <servlet-mapping>
         <servlet-name>Tela_EletronicosController</servlet-name>
         <url-pattern>/Tela_Eletronicos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModeloController</servlet-name>
+        <url-pattern>/modelo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

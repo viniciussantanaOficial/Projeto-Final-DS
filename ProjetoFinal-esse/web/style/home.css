@@ -84,9 +84,16 @@ p{
     height: 20vh;
 }
 
-img .img-fluid{
+.img.img-fluid{
 
     width: auto;
+    height: auto;
+    margin-top: 100px;
+}
+
+.img-fluid{
+
+    max-width: 100%;
     height: auto;
 }
 
