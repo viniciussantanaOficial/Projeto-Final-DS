@@ -13,11 +13,12 @@
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
                     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
                     crossorigin="anonymous">
-                    <link href="./style/modelo.css" rel="stylesheet" type="text/css" />
+                <link href="./style/modelo.css" rel="stylesheet" type="text/css" />
                 <link href="./style/home-main.css" rel="stylesheet" type="text/css" />
                 <link href="./style/home.css" rel="stylesheet" type="text/css" />
                 <link href="./style/Tela_inicial.css" rel="stylesheet" type="text/css" />
                 <link href="./style/footer.css" rel="stylesheet" type="text/css" />
+                <link href="./style/carrinho-tela.css" rel="stylesheet" type="text/css" />
             </head>
 
             <body>
@@ -25,21 +26,17 @@
 
                 <header>
                     <nav>
-                        <a class="logo" href="/">Ls_video</a>
+                        <a class="logo" href="/.home">Ls_video</a>
                         <u class="nav-list">
 
 
                             <a href="./Tela_Vinhos2">
                                 <li>Vinhos </li>
                             </a>
-                            <a href="./pre_carrinho">
+                            <a href="./Tela_Perfumes">
                                 <li>Perfumes </li>
                             </a>
                         </u>
-
-
-
-
                         <div class="icones-header2">
                             <div class="buscar-icone">
                                 <input class="buscar-header" type="text"><i class="fa-solid fa-magnifying-glass"></i>
@@ -47,12 +44,8 @@
                             <div class="icone-header">
                                 <a href="./logar"><i class="fa-solid fa-user"></i></a>
                                 <a href="./carrinho"><i class="fa-solid fa-cart-shopping2"></i></a>
-
-
                             </div>
                         </div>
-
-
                     </nav>
                 </header>
                 <main>
@@ -88,26 +81,86 @@
 
                         <div class="produtos-main">
                             <c:forEach items="${produto}" var="produto">
-                            <div class="card">
-                                <div class="card-image"><img style="width: 400px; height: 210px"
-                                    class="img-fluid"
-                                    src="data:image/jpeg;base64,${produto.imagemBase64}"
-                                    alt="100%x280"></div>
-                                <div class="category"><h4 class="card-title">${produto.nome}</h4> </div>
-                                <div class="heading">
-                                    <button class="btn-carrinho"><i class="fa-solid fa-cart-shopping2"></i></button>
+                                <div class="card">
+                                    <div class="card-image"><img style="width: 400px; height: 210px" class="img-fluid"
+                                            src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                                    <div class="category">
+                                        <h4 class="card-title">${produto.nome} </h4>
+                                        <button class="btn-car"><i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+
+                                
+                            </c:forEach>
+                            
+                         
+                       
+
+                        </div>
+                        
+                </main>
+                <div class="carrinho-tela ">
+                    <div class="fechar-style">
+                    <button class="fechar-carrinho">X</button>
+                    </div>
+                    <div class="card-carrinho">
+                        <div class="card-left">
+                            <div class="img-carrinho">
+                                <img src="./img/png-clipart-perfume-eau-de-toilette-milliliter-fluid-ounce-paco-rabanne-cosmetics-toilet.png"
+                                    alt="">
+                                <div class="info-carrinho">
+                                    <div class="nome-produto">
+                                        vinho reservado
+                                    </div>
+                                    <div class="valor-produto">
+                                        R$40,00
+                                    </div>
+                                    <div class="quantidade-produto">
+                                        <select name="qntd" id="">
+                                            <option value="1">1</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </c:forEach>
                         </div>
-                    </main>
-
-
-
-
-
+                        <div class="card-right">
+                            <div class="infos-text">
+                                <h6>Seu carrinho</h6>
+                                <h6>1 item</h6>
+                                <div class="valor-total-produtos">
+                                    <h6>Valor total do produto</h6>
+                                    <div class="preco-total">
+                                        R$30,00
+                                    </div>
+                                </div>
+                                <div class="custo-total">
+                                    <h6>Valor total do produto</h6>
+                                    <div class="custo-total-entrega">
+                                        R$50,00
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-right-low">
+                                <div class="preco-total">
+                                    <h4>Total</h4>
+                                    <div class="valor">
+                                       <h3>80,00</h3> 
+                                    </div>
+                                </div>
+                                <div class="buttons">
+                                <div class="button1">
+                                    <button >Continuar comprando</button>
+                                </div>
+                                    <div class="button2">
+                                        <a href="./carrinho"><button>Ver carrinho</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <footer class="bg-body-tertiary text-center">
-                    <div class="container p-4">
+                    <div class="container2 p-4">
                         <section class="mb-4">
                             <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
                                     class="fab fa-facebook-f"></i></a>
@@ -224,11 +277,10 @@
                             </div>
                         </section>
                     </div>
-
                 </footer>
 
 
-                
+
 
 
 
@@ -245,6 +297,6 @@
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
             <script src="./js/home.js"></script>
-            <script src="./js/pre_carrinho.js"></script>
+            
 
             </html>

@@ -10,7 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tela_Vinhos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Tela_Vinhos</title>
+        <link href="./style/modelo.css" rel="stylesheet" type="text/css" />
+        <link href="./style/home-main.css" rel="stylesheet" type="text/css" />
         <link href="./style/home.css" rel="stylesheet" type="text/css" />
+        <link href="./style/Tela_inicial.css" rel="stylesheet" type="text/css" />
+        <link href="./style/footer.css" rel="stylesheet" type="text/css" />
+        <link href="./style/carrinho-tela.css" rel="stylesheet" type="text/css" />
 
     </head>
     <body>
@@ -22,8 +29,8 @@
 
 
                    <a href="/Tela_Vinhos"> <li> Vinhos </li></a>
-                    <li> <a href="/"></a>Perfumes </li>
-                    <li> <a href="/"></a>Eletronicos </li>
+                    <li> <a href="/tela_perfumes"></a>Perfumes </li>
+                    
 
                 </u>
 

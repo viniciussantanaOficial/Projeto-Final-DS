@@ -77,7 +77,7 @@ public class UsuarioDao {
     
     public boolean insertCliente(UsuarioBean usuario) {
         String senha = usuario.getSenha();
-//        String hashedSenha = encoder.encode(senha);
+
         
         try {
             String sql = "INSERT INTO usuarios (nome, senha, usuario, email, telefone, data_nascimento, cpf) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -88,8 +88,8 @@ public class UsuarioDao {
             stmt.setString(3, usuario.getUsuario());
             stmt.setString(4, usuario.getEmail());
             stmt.setString(5, usuario.getTelefone());
-            stmt.setDate(6, usuario.getData_nascimento()); // Ajuste aqui
-            stmt.setString(7, usuario.getCpf()); // E aqui
+            stmt.setDate(6, usuario.getData_nascimento()); 
+            stmt.setString(7, usuario.getCpf()); 
 
 
             stmt.executeUpdate();
@@ -103,6 +103,5 @@ public class UsuarioDao {
         return false;
     }
     
-    
-    
+   
 }

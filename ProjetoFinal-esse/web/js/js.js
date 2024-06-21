@@ -12,6 +12,7 @@ if (cartIcon) {
 if (cartIcon) {
     cartIcon.onclick = function () {
         modal.close();
+        window.location.href = "./pre_carrinho";
         console.log("Fechando modal");
     };
 }

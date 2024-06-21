@@ -1,17 +1,11 @@
-const cartIcon = document.querySelector(".fa-solid.fa-cart-shopping");
-const modal = document.querySelector("dialog");
-const fechar = document.querySelector(".fa-x"); 
+const bntcar = document.querySelector(".produtos-main .category .btn-car");
+const telacar = document.querySelector(".carrinho-tela");
+const fechar = document.querySelector(".carrinho-tela .fechar-carrinho");
+bntcar.addEventListener("click", () => {
+    telacar.classList.add("container");
+    
+});
 
-if (cartIcon) {
-    cartIcon.onclick = function() {
-        modal.showModal();
-        console.log("Abrindo modal");
-    };
-}
-
-if (fechar) {
-    fechar.onclick = function () {
-        modal.close();
-        console.log("Fechando modal");
-    };
-}
+fechar.addEventListener("click", () => {
+    telacar.classList.remove("container");
+    });

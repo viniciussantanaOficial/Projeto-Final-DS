@@ -45,7 +45,20 @@
             </nav>
         </header>
 
-
+        <main>
+        <div class="produtos-main">
+            <c:forEach items="${produto}" var="produto">
+                <div class="card">
+                    <div class="card-image"><img style="width: 400px; height: 210px" class="img-fluid"
+                            src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                    <div class="category">
+                        <h4 class="card-title">${produto.nome} </h4>
+                        <button class="btn-car"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+    </main>
     </body>
 </html>
 

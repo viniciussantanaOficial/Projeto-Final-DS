@@ -86,13 +86,13 @@ public class CadastroController extends HttpServlet {
             String dateString = request.getParameter("date");
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             java.util.Date date = null;
-
             try {
                 date = dateFormat.parse(dateString);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-
+            
+            
             String cpf = request.getParameter("cpf");
             String passaword = request.getParameter("passaword");
             //se nome for nulo ou o nome sem espaço nao estiver vazio
@@ -105,17 +105,17 @@ public class CadastroController extends HttpServlet {
                     || passaword.trim().isEmpty()) {
                 errorMessage = "Preencha todos os campos!";
             } else {
-                phone = phone.replaceAll("[^0-9]", "");
+                
                 cpf = cpf.replaceAll("[^0-9]", "");
-
+                phone = phone.replaceAll("[^0-9]", "");
+               
                 UsuarioBean usuario = new UsuarioBean();
                 usuario.setNome(firstname);
                 usuario.setUsuario(lastname);
                 usuario.setEmail(email);
                 usuario.setTelefone(phone);
-                // Converte java.util.Date para java.sql.Date
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                usuario.setData_nascimento(sqlDate); // Define a data de nascimento no UsuarioBean
+                usuario.setData_nascimento(sqlDate); 
                 usuario.setCpf(cpf);
                 usuario.setSenha(passaword);
 

@@ -1,3 +1,8 @@
+.carrinho-tela{
+
+    display: none;
+}
+
 
 .container {
     display: flex;
@@ -6,8 +11,8 @@
     min-height: 100vh; 
     padding: 20px; 
     box-sizing: border-box; 
+    z-index: 10;
 }
-
 
 
 .card-carrinho {
@@ -125,8 +130,9 @@
     justify-content: space-between;
 }
 
-.infos-text p {
+.infos-text h6{
     margin: 5px 0; 
+    color: rgb(0, 0, 0);
 }
 
 .card-right-low {
@@ -182,3 +188,12 @@
     color: white;
 }
 
+.card{
+
+    height: 278px;
+}
+
+.fechar-style{
+
+    
+}

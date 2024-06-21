@@ -5,17 +5,19 @@ contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="pt-br">
   <head>
 
-    <link href="./style/pre_carrinho.css" rel="stylesheet" type="text/css"/>
+ 
     <script src="https://kit.fontawesome.com/446d1f4167.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="./style/carrinho-tela.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
   
-    <button><i class="fa-solid fa-cart-shopping"></i></button>
+    <button class="btn-car"><i class="fa-solid fa-cart-shopping"></i></button>
     <h3>Carrinho</h3>
-    <dialog>
-      <div class="container">
+    
+    
+      <div class="carrinho-tela ">
         <div class="card-carrinho">
             <div class="card-left">
                 <div class="img-carrinho">
@@ -74,7 +76,7 @@ contentType="text/html" pageEncoding="UTF-8"%>
     </div>
     
     
-        <div class="container">
+        <div class="carrinho-tela">
         <div class="card-deck">
             <div class="card">
               <img class="card-img-top" src="..." alt="Card image cap">
@@ -108,11 +110,11 @@ contentType="text/html" pageEncoding="UTF-8"%>
             </div>
           </div>
         </div>
-    </dialog>
+   
   </body>
-
   <script src="./js/pre_carrinho.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"></script>
 
