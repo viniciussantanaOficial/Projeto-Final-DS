@@ -88,4 +88,36 @@ public class ProdutoDao {
         }
         return produtos;
     }
+    
+    public ProdutoBean lerproduto(int id){
+        ProdutoBean p = new ProdutoBean();
+        
+        try{
+            Connection conexao = Conexao.getConn();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE id_produto = ?");
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+
+                p.setId_produto(rs.getInt("id_produto"));
+                p.setNome(rs.getString("nome"));
+                p.setValor(rs.getFloat("valor"));
+                p.setCategoria(rs.getInt("categoria_id"));
+                Blob imagemBlob = rs.getBlob("imagem");
+                if (imagemBlob != null) {
+                    byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
+                    p.setImagem(imagemBytes);
+                }                
+                
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return p;
+    }
 }

@@ -7,8 +7,8 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Base64;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,41 +22,38 @@ import modoDao.ProdutoDao;
  *
  * @author Senai
  */
-public class HomeController extends HttpServlet {
+public class ProdutoUnicoController extends HttpServlet {
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ProdutoDao dao = new ProdutoDao();
+        
+        ProdutoBean produtos = dao.lerproduto(Projeto.getIdProduto());
+        System.out.println("Prdotuo: " + produtos);
+        float total = 0;
+        if (produtos.getImagem() != null) {
+            String imagemBase64 = Base64.getEncoder().encodeToString(produtos.getImagem());
+            produtos.setImagemBase64(imagemBase64);
+        }
+
+        request.setAttribute("produto", produtos);
+        request.setAttribute("total", total);
+
+        String perfil = "/WEB-INF/jsp/produtoUnico.jsp";
+        RequestDispatcher pageP = getServletContext().getRequestDispatcher(perfil);
+
+        pageP.forward(request, response);
+    }
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String url = "/WEB-INF/jsp/home.jsp";
-        
-        ProdutoDao dao = new ProdutoDao();
-        List<ProdutoBean> produtos = dao.lertodos();
-        float total = 0;
-
-        for (ProdutoBean produto : produtos) {
-            if (produto.getImagem() != null) {
-                String imagemBase64 = Base64.getEncoder().encodeToString(produto.getImagem());
-                produto.setImagemBase64(imagemBase64);
-            }
-        }
-        
-        request.setAttribute("produto", produtos);
-        request.setAttribute("total", total);
-        
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
-        d.forward(request, response);
-        
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -75,13 +72,13 @@ public class HomeController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if(url.equals("/produtoUnicoPag")){
+        if (url.equals("/produtoUnicoPagaa")) {
             Projeto.setIdProduto(Integer.parseInt(request.getParameter("idProduto")));
             response.sendRedirect("./produtoUnico");
         } else {
             processRequest(request, response);
         }
-        
+
     }
 
     /**

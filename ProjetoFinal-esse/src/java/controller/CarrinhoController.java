@@ -7,11 +7,15 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Base64;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modoBean.ProdutoBean;
+import modoDao.ProdutoDao;
 
 /**
  *
@@ -32,10 +36,22 @@ public class CarrinhoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+
+            ProdutoDao dao = new ProdutoDao();
+            List<ProdutoBean> produtos = dao.lertodos();
+            for (ProdutoBean produto : produtos) {
+                if (produto.getImagem() != null) {
+                    String imagemBase64 = Base64.getEncoder().encodeToString(produto.getImagem());
+                    produto.setImagemBase64(imagemBase64);
+                }
+            }
+
+            request.setAttribute("produto", produtos);
+
             String url = "/WEB-INF/jsp/carrinho.jsp";
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
-        d.forward(request, response);
-    }
+            RequestDispatcher d = getServletContext().getRequestDispatcher(url);
+            d.forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

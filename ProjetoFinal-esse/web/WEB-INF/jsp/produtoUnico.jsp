@@ -49,58 +49,43 @@
             </nav>
         </header>
         <main>
-            <div class="main-top">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="./img/R.jpg" alt="First slide">
+            <div class="carrinho-tela ">
+                <div class="card-right">
+                    <c:forEach items="${produto}" var="produto">
+                        <div class="separar-carrinho">
+                            <div class="card">
+                                <div class="card-image"><img style="width: 400px; height: 210px" class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                                <div class="category">
+                                    <h4 class="card-title">${produto.nome} </h4>
+                                    <button class="btn-car"><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                            </div><div class="carrinho-lateral">
+                                <div class="infos-text">
+                                    <h6>Seu carrinho</h6>
+                                    <h6>1 item</h6>
+                                    <div class="valor-total-produtos">
+                                        <h6>Valor total do produto</h6>
+                                        <div class="preco-total">
+                                            <h6>${produto.valor}</h6> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-right-low">
+                                    <div class="buttons">
+                                        <div class="button1">
+                                            <button >Continuar comprando</button>
+                                        </div>
+                                        <div class="button2">
+                                            <a href="./carrinho"><button>Ver carrinho</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./img/o.21479.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="..." alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                       data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                       data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                                        </c:forEach>
                 </div>
-
-
-            </div>
-
-            <div class="produtos-main">
-                <c:forEach items="${produto}" var="produto">
-                    <div class="card">
-                        <div class="card-image"><img style="width: 400px; height: 210px" class="img-fluid"
-                                                     src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
-                        <div class="category">
-                            <h4 class="card-title">${produto.nome} </h4>
-                            <form action="produtoUnicoPag" method="post">
-                                <input type="hidden" value="${produto.id_produto}" id="idProduto" name="dProduto">
-                                <button type="submit" class="btn-car"><i class="fa-solid fa-cart-shopping"></i></button>
-                            </form>
-
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-
-
-
+            </div>                                      
         </main>
 
         <footer class="bg-body-tertiary text-center">
