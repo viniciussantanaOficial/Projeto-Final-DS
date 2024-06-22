@@ -120,4 +120,42 @@ public class ProdutoDao {
         }
         return p;
     }
+    
+    public class ProdutoDAO {
+    
+    public ArrayList<ProdutoBean> buscarProdutos(String buscar) {
+        ArrayList<ProdutoBean> produtos = new ArrayList<>();
+        
+        try {
+            Connection conexao = Conexao.getConn();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+          
+            String query = "SELECT * FROM produtos WHERE nome LIKE ?";
+            stmt = conexao.prepareStatement(query);
+            stmt.setString(1, "%" + buscar + "%");
+            
+            rs = stmt.executeQuery();
+            
+            if(rs.next()) {
+                ProdutoBean produto = new ProdutoBean();
+                produto.setId_produto(rs.getInt("id_produto"));
+                produto.setNome(rs.getString("nome"));
+               
+                prudt
+                
+                
+                produtos.add(produto);
+            }
+            
+            rs.close();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return produtos;
+    }
 }
+

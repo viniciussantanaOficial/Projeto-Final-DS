@@ -1,4 +1,3 @@
-DROP database ls_video;
 create database ls_video;
 use ls_video;
 
@@ -50,6 +49,7 @@ id_produto int auto_increment primary key,
 categoria_id int,
 nome varchar (255),
 imagem longblob,
+descricao varchar(100) ,
 valor float (8,2)
 );
 
@@ -81,14 +81,15 @@ produto_id2 int,
 quantidade_estoque int
 );
 
--- Tabela de carrinho
+
 CREATE TABLE carrinho (
     id_carrinho INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
+    quantidade int,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
--- Tabela de produtos no carrinho
+
 CREATE TABLE carrinho_produto (
     id_carrinho_produto INT AUTO_INCREMENT PRIMARY KEY,
     id_carrinho INT NOT NULL,

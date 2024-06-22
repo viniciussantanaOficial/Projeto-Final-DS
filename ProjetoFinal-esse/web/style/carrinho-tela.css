@@ -1,6 +1,7 @@
 .carrinho-tela{
-     z-index: 999;
+    z-index: 999;
     display: block;
+    height: 498px;
 }
 
 
@@ -65,7 +66,7 @@
 }
 
 .img-carrinho img {
-   
+
     height: 50%;
     width: 50%;
 }
@@ -146,7 +147,7 @@
 .buttons{
 
     display: block;
-    
+
 }
 
 .infos-text{
@@ -188,6 +189,11 @@
 .button2 button:hover {
     background-color: black;
     color: white;
+}
+
+.card-produto{
+    width: 300px
+    height: 278px;
 }
 
 .card{

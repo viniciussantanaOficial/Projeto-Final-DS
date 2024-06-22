@@ -28,16 +28,14 @@
                 <!-- Login Form -->
                 <form action="logar" method="post">
                     <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="login">
-                    <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="password">
+                    <input type="password" id="senha" name="senha" class="form-control form-control-lg" required=""/>
+                    
                    <button type="submit" class="fadeIn fourth">Login In</button>
                     <c:if test="${not empty errorMensager}" >  
                         <div style="color: red;" >
                             ${errorMensager}
                         </div>
                     </c:if>
-                        
-                        
-
                     
                 </form>
 

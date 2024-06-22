@@ -16,10 +16,10 @@
   top: 182px;
 }
 
-  .card-image {
+.cartao-image {
     background-color: rgb(236, 236, 236);
     width: 100%;
-    height: 130px;
+    height: 230%;
     border-radius: 6px 6px 0 0;
   }
   

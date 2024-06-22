@@ -7,6 +7,10 @@
         <title>Welcome to Spring Web MVC project</title>
         <link href="./style/cadastro.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+        
 
     </head>
 
@@ -22,9 +26,7 @@
                         <div class="title">
                             <h1>Cadastra-se</h1>
                         </div>
-
                     </div>
-
                     <div class="input-group">
                         <div class="input-box">
                             <label for="firstname">Primeiro nome</label>
@@ -43,7 +45,7 @@
 
                         <div class="input-box">
                             <label for="phone">Telefone</label>
-                            <input id="phone" type="text" name="phone" placeholder="(XX- XXXX-XXXX)" required>
+                            <input id="phone" type="text" name="phone"  required>
                         </div>                       
 
                         <div class="input-box">
@@ -52,12 +54,12 @@
                         </div>
                         <div class="input-box">
                             <label for="cpf">cpf</label>
-                            <input id="cpf" type="number" name="cpf" placeholder=" XXX.XXX.XXX-XX" required>
+                            <input id="cpf" type="text" name="cpf"  required>
                         </div>
 
                         <div class="input-box">
                             <label for="passaword">Senha</label>
-                            <input id="passaword" type="passaword" name="passaword" placeholder="********" required>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" required=""/>
                         </div>
                     </div>
 
@@ -90,6 +92,7 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
     ></script>
+    <script src="./js/js-validacoes.js"></script>
     
 
 </html>

@@ -1,7 +1,7 @@
 
 main{
     width: 100%;
-    height: auto;
+    height: 80%;
     display: grid;
     place-items: center;
     padding: 25px;
@@ -70,7 +70,7 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 4
 footer{
     
     background-color: black;
-    margin-top: 50px;
+   
     
 }
 
@@ -101,9 +101,9 @@ p{
     top: -250px;
 }
 
-.carousel-control-prev {
-    left: -80px;
-    top: -250px;
+a.carousel-control-prev {
+    left: 0 !important;
+    top: 0 !important;
 }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
@@ -122,7 +122,7 @@ p{
 }
 
 .fa-solid {
-    color: black;
+    color: white;
 }
 
 .card-title{
@@ -137,10 +137,6 @@ p{
     color: black;
 }
 
-.proximo{
-
-    
-}
 
 .proximo{
 
@@ -178,8 +174,7 @@ p{
 .category {
     display: flex;
     align-items: baseline;
-    margin-top: 100px;
-
+    justify-content: center;
     }
 
 .btn-car{
@@ -187,3 +182,48 @@ p{
     width: 27px;
 }
 
+.container-produto-unico{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.carrinho-lateral{
+
+   
+    width: 70%;
+    height: 50%;
+    justify-items: left;
+    border: 1px solid black;
+}
+
+.category-cards{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.meu-carrinho{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center .row{
+
+   
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    color: black;
+}
+
+.carousel-control-prev {
+    left: 0px; 
+     top: 0px; 
+}
