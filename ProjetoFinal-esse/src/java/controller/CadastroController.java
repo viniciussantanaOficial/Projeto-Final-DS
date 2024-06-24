@@ -94,7 +94,7 @@ public class CadastroController extends HttpServlet {
             
             
             String cpf = request.getParameter("cpf");
-            String passaword = request.getParameter("passaword");
+            String passaword = request.getParameter("password");
             //se nome for nulo ou o nome sem espaço nao estiver vazio
             if (firstname.trim().isEmpty()
                     || lastname.trim().isEmpty()

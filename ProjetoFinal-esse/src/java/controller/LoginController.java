@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -36,6 +37,14 @@ public class LoginController extends HttpServlet {
         String url = "/WEB-INF/jsp/index.jsp";
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
+         UsuarioBean usuariobean = new UsuarioBean();
+          UsuarioDao usuariodao = new UsuarioDao();
+        
+         if (usuariobean.getId_usuarioStatic() != 0) {
+            UsuarioDao u = new UsuarioDao();
+            List<UsuarioBean> usuarios = u.getUsuarioById(UsuarioBean.getId_usuarioStatic());
+            request.setAttribute("usuario", usuarios);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,6 +97,13 @@ public class LoginController extends HttpServlet {
            }else{
                
            }
+           
+           if(url.equals("/sair")){
+          UsuarioBean.setId_usuarioStatic(0);
+            response.sendRedirect(request.getContextPath() + "/inicio");
+
+        } 
+
         }
     }
 

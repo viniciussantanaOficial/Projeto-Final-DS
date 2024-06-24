@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import modoBean.UsuarioBean;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -101,6 +103,36 @@ public class UsuarioDao {
             e.printStackTrace();
         }
         return false;
+    }
+    
+    public List<UsuarioBean> getUsuarioById(int idUsuario) {
+
+        List<UsuarioBean> usuarios = new ArrayList<>();
+        try {
+            Connection conn = null;
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            UsuarioBean usuario = null;
+            conn = Conexao.getConn();
+            String sql = "SELECT * FROM usuario WHERE id_usuario = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, idUsuario);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                usuario = new UsuarioBean();
+                usuario.setId_usuario(rs.getInt("id_usuario"));
+                usuario.setNome(rs.getString("nome"));
+                usuarios.add(usuario);
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
     }
     
    

@@ -49,6 +49,7 @@ public class HomeController extends HttpServlet {
             }
         }
         
+        
         request.setAttribute("produto", produtos);
         request.setAttribute("total", total);
         

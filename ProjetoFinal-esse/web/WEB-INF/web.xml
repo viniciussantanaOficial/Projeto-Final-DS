@@ -89,6 +89,10 @@
         <url-pattern>/logar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/sair</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Tela_inicialController</servlet-name>
         <url-pattern>/tela_inicial</url-pattern>
     </servlet-mapping>

@@ -22,8 +22,6 @@
             </head>
 
             <body>
-
-
                 <header>
                     <nav>
                         <a class="logo" href="./home">Ls_video</a>
@@ -129,7 +127,13 @@
                         <section class="">
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
+                                    
+                                    <c:choose>
+                            <c:when test="${empty usuario}">
+                                <a href="./logar"><i class="fa-solid fa-user"></i></a>
+                                </c:when>
+                                <c:otherwise>
+                             <h5 class="text-uppercase">Links</h5>
                                     <ul class="list-unstyled mb-0">
                                         <li>
                                             <a class="text-body" href="./login">Login</a>
@@ -141,6 +145,9 @@
                                             <a class="text-body" href="./home">Pagina inicial</a>
                                         </li>
                                     </ul>
+                            </c:otherwise>
+                        </c:choose>
+                                    
                                 </div>     
                             </div>
                         </section>
