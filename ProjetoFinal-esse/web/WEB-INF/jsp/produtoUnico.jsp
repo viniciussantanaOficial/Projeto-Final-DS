@@ -82,10 +82,10 @@
                                     <div class="button1">
                                         <a href="./home"><button>Continuar comprando</button></a>
                                     </div>
-                                    <div class="button2">
-                                        <a href="./carrinho"><button>Ver carrinho</button></a>
-                                        <i class="fa-solid fa-trash"></i>
-                                    </div>
+                                     <form action="add-carrinho" method="post" class="button2">
+                                        <input type="hidden" name="idProduto" value="${produto.id_produto}" id="idProduto"> 
+                                        <button type="submit">Adicionar ao carrinho</button>
+                                    </form
                                 </div>
                             </div>
                         </div>

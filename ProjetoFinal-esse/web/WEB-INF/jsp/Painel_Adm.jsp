@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="lsitagem-adm">
-                        <a class="listagem-p-adm" href="./tela-listagem-produtos"><i class="fa-solid fa-house"></i>
+                        <a class="listagem-p-adm" href="./listagem-adm"><i class="fa-solid fa-house"></i>
                             <h2>Listagem produtos</h2>
                         </a>
                     </div>

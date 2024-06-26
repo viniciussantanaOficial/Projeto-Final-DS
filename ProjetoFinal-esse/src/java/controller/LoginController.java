@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/index.jsp";
+       
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
          UsuarioBean usuariobean = new UsuarioBean();

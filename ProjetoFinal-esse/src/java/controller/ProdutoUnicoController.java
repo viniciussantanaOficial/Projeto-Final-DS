@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modoBean.ProdutoBean;
 import modoBean.Projeto;
+import modoDao.CarrinhoDao;
 import modoDao.ProdutoDao;
 
 /**
@@ -71,11 +72,17 @@ public class ProdutoUnicoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
+       String url = request.getServletPath();
         if (url.equals("/produtoUnicoPagaa")) {
             Projeto.setIdProduto(Integer.parseInt(request.getParameter("idProduto")));
             response.sendRedirect("./produtoUnico");
-        } else {
+        } else  if (url.equals("/add-carrinho")) {
+            int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+            int qtd = 1;
+            CarrinhoDao dao = new CarrinhoDao();
+            dao.createCarrinho(idProduto, qtd);
+            response.sendRedirect("./carrinho");
+        }else {
             processRequest(request, response);
         }
 

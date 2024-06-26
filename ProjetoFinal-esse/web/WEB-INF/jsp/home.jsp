@@ -51,8 +51,19 @@
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <a href="./logar"><i class="fa-solid fa-user"></i></a>
-                                <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <c:choose>
+                                    <c:when test="${id_usuario != 0}">
+                                        <form action="sair" method="post">
+                                            <button type="submit">SAIR</button>
+                                        </form>
+                                         <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="./logar"><i class="fa-solid fa-user"></i>ASSDA</a>
+                                    </c:otherwise>
+                                </c:choose>
+                                
+
                                 </c:otherwise>
                             </c:choose>
 
@@ -64,7 +75,7 @@
             <div class="main-top">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-s blide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>

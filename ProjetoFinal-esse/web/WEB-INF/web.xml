@@ -73,8 +73,8 @@
         <servlet-class>controller.ProdutoUnicoController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListagemProdutosController</servlet-name>
-        <servlet-class>controller.ListagemProdutosController</servlet-class>
+        <servlet-name>ListagemProdutosAdminController</servlet-name>
+        <servlet-class>controller.ListagemProdutosAdminController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
@@ -111,6 +111,10 @@
     <servlet-mapping>
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/carrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/deletar-carrinho</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>pre_carrinhoController</servlet-name>
@@ -161,8 +165,14 @@
         <url-pattern>/produtoUnico</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListagemProdutosController</servlet-name>
-        <url-pattern>/telaLprodutos</url-pattern>
+        <servlet-name>ProdutoUnicoController</servlet-name>
+        <url-pattern>/add-carrinho</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>ListagemProdutosAdminController</servlet-name>
+        <url-pattern>/listagem-adm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

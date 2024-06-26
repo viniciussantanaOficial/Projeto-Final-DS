@@ -7,48 +7,23 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Base64;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modoBean.CarrinhoBean;
-import modoBean.ProdutoBean;
-import modoDao.CarrinhoDao;
-import modoDao.ProdutoDao;
 
 /**
  *
  * @author Senai
  */
-public class CarrinhoController extends HttpServlet {
+public class ListagemProdutosAdminController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        CarrinhoDao dao = new CarrinhoDao();
-
-        List<CarrinhoBean> carrinho = dao.LerCarrinho();
-        for (CarrinhoBean produto : carrinho) {
-            if (produto.getId_produto().getImagem() != null) {
-                String imagemBase64 = Base64.getEncoder().encodeToString(produto.getId_produto().getImagem());
-                produto.getId_produto().setImagemBase64(imagemBase64);
-            }
-        }
-        request.setAttribute("produto", carrinho);
-
-        String url = "/WEB-INF/jsp/carrinho.jsp";
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
+       String url = "/WEB-INF/jsp/tela-listagem-produtos.jsp";
+       RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
 
@@ -78,18 +53,7 @@ public class CarrinhoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        if (url.equals("/deletar-carrinho")) {
-            System.out.println("Delete");
-            CarrinhoDao dao = new CarrinhoDao();
-            int id = Integer.parseInt(request.getParameter("idProduto"));
-            dao.deleteCarrinho(id);
-            response.sendRedirect("./carrinho");
-
-        } else {
-            processRequest(request, response);
-        }
-
+        processRequest(request, response);
     }
 
     /**
