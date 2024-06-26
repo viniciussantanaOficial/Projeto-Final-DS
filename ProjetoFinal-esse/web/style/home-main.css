@@ -227,3 +227,8 @@ a.carousel-control-prev {
     left: 0px; 
      top: 0px; 
 }
+
+.p-4 {
+    padding: 0; 
+}
+

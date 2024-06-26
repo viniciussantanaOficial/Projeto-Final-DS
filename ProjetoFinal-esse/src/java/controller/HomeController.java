@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modoBean.ProdutoBean;
 import modoBean.Projeto;
+import modoBean.UsuarioBean;
 import modoDao.ProdutoDao;
 
 /**
@@ -37,7 +38,7 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/WEB-INF/jsp/home.jsp";
-        
+        request.setAttribute("id_usuario", UsuarioBean.getId_usuarioStatic());
         ProdutoDao dao = new ProdutoDao();
         List<ProdutoBean> produtos = dao.lertodos();
         float total = 0;

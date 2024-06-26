@@ -96,7 +96,7 @@
                     </div>
                 </main>
                 <footer class="bg-body-tertiary text-center">
-                    <div class="container2 p-4">
+                    <div id="footer-mainclass" class="container2 p-4">
                         <section class="">
                             <form action="">
                                 <div class="row d-flex justify-content-center">
@@ -129,7 +129,7 @@
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                     
                                     <c:choose>
-                            <c:when test="${empty usuario}">
+                            <c:when test="${id_usuario != 0}">
                                 <a href="./logar"><i class="fa-solid fa-user"></i></a>
                                 </c:when>
                                 <c:otherwise>

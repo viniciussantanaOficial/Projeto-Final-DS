@@ -36,7 +36,7 @@ public class UsuarioDao {
            if(rs.next()){
                 id = rs.getInt("id_usuario");
                 UsuarioBean.setAdmS(rs.getBoolean("adm"));
-           
+                UsuarioBean.setId_usuarioStatic(rs.getInt("id_usuario"));
            }
                
                rs.close();
@@ -114,7 +114,7 @@ public class UsuarioDao {
             ResultSet rs = null;
             UsuarioBean usuario = null;
             conn = Conexao.getConn();
-            String sql = "SELECT * FROM usuario WHERE id_usuario = ?";
+            String sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, idUsuario);
             rs = stmt.executeQuery();

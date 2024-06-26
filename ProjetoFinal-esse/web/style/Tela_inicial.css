@@ -71,7 +71,7 @@ nav{
 
     border: #23232e;
     border-radius: 4px;
-    
+        width: 50vh;
 }
 
 .fa-user{
@@ -86,6 +86,11 @@ nav{
 .fa-magnifying-glass{
 
     right: 100vh;
+}
+
+#footer-mainclass{
+    padding: 0;
+    
 }
 
 
