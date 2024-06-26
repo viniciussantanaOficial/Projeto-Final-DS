@@ -1,3 +1,4 @@
+
 body {
 
     padding: 0;
@@ -58,7 +59,7 @@ main{
 .inputs-adm{
 
     display: block;
-    padding: 14vh;
+    padding: 0vh;
 }
 
 .main-left{

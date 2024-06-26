@@ -40,7 +40,13 @@ public class LoginController extends HttpServlet {
          UsuarioBean usuariobean = new UsuarioBean();
           UsuarioDao usuariodao = new UsuarioDao();
         
-         if (usuariobean.getId_usuarioStatic() != 0) {
+         if (usuariobean.getId_usuarioStatic() != 0 && usuariobean.getId_usuarioStatic() != 2) {
+            UsuarioDao u = new UsuarioDao();
+            List<UsuarioBean> usuarios = u.getUsuarioById(UsuarioBean.getId_usuarioStatic());
+            request.setAttribute("usuario", usuarios);
+        }
+         
+         if (usuariobean.getId_usuario() == 2) {
             UsuarioDao u = new UsuarioDao();
             List<UsuarioBean> usuarios = u.getUsuarioById(UsuarioBean.getId_usuarioStatic());
             request.setAttribute("usuario", usuarios);

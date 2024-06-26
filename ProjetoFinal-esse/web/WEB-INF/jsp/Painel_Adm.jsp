@@ -71,25 +71,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
-
-                <div class="main-top">
-                    <div class="main-adm">
-                        <h3> Gerenciar usuarios</h3>
-                    </div>
-                    <div class="adicionar-produtos">
-                        .
-                    </div>
-                </div>
-
-                <div class="main-top">
-                    <div class="main-adm">
-                        <h3> Adicionar produtos</h3>
-                    </div>
-                    <div class="adicionar-produtos">
-                        .
-                    </div>
-                </div>
+          
 
 
             </main>

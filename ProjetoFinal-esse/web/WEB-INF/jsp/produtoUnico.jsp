@@ -84,6 +84,7 @@
                                     </div>
                                     <div class="button2">
                                         <a href="./carrinho"><button>Ver carrinho</button></a>
+                                        <i class="fa-solid fa-trash"></i>
                                     </div>
                                 </div>
                             </div>
@@ -93,27 +94,13 @@
                 </main>
 
                 <footer class="bg-body-tertiary text-center">
-                    <div class="container2 p-4">
-                        <section class="mb-4">
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-google"></i></a>
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-github"></i></a>
-                        </section>
+                    <div id="footer-mainclass" class="container2 p-4">
                         <section class="">
                             <form action="">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-auto">
                                         <p class="pt-2">
-                                            <strong>Sign up for our newsletter</strong>
+                                            <strong>Email de contanto</strong>
                                         </p>
                                     </div>
                                     <div class="col-md-5 col-12">
@@ -124,7 +111,7 @@
                                     </div>
                                     <div class="col-auto">
                                         <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                            Subscribe
+                                            Enviar
                                         </button>
                                     </div>
                                 </div>
@@ -132,86 +119,38 @@
                         </section>
                         <section class="mb-4">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam eum
-                                harum corrupti dicta, aliquam sequi voluptate quas.
+                                
                             </p>
                         </section>
                         <section class="">
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
+                                    
+                                    <c:choose>
+                            <c:when test="${id_usuario != 0}">
+                                <a href="./logar"><i class="fa-solid fa-user"></i></a>
+                                </c:when>
+                                <c:otherwise>
+                             <h5 class="text-uppercase">Links</h5>
                                     <ul class="list-unstyled mb-0">
                                         <li>
-                                            <a class="text-body" href="#!">Link 1</a>
+                                            <a class="text-body" href="./login">Login</a>
                                         </li>
                                         <li>
-                                            <a class="text-body" href="#!">Link 2</a>
+                                            <a class="text-body" href="./cadastro">Cadastro</a>
                                         </li>
                                         <li>
-                                            <a class="text-body" href="#!">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 4</a>
+                                            <a class="text-body" href="./home">Pagina inicial</a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a class="text-body" href="#!">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a class="text-body" href="#!">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a class="text-body" href="#!">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="#!">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                                    
+                                </div>     
                             </div>
                         </section>
                     </div>
                 </footer>
-
 
 
 
