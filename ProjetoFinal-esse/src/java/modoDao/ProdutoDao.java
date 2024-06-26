@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.Part;
 import modoBean.ProdutoBean;
+import modoBean.UsuarioBean;
 
 /**
  *
@@ -119,6 +120,28 @@ public class ProdutoDao {
             e.printStackTrace();
         }
         return p;
+    }
+    public void deletar(ProdutoBean deletar){
+        try{
+            
+           Connection conexao = Conexao.getConn();
+            PreparedStatement stmt = null; 
+            
+      
+         stmt = conexao.prepareStatement("delete from produtos where id_produto = ?");
+           
+         UsuarioBean usuario = new UsuarioBean();
+         stmt.setInt(1,deletar.getId_produto());
+    
+ 
+   
+            stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 }
     

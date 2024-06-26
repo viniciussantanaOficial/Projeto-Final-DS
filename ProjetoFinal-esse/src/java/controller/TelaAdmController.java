@@ -79,7 +79,16 @@ public class TelaAdmController extends HttpServlet {
             
             produtodao.create(produtobean);
             response.sendRedirect("./telaadm");
+        }   
+        if(url.equals("/cadastrarProduto")) {
+            ProdutoBean produtobean = new ProdutoBean();
+            ProdutoDao produtodao = new ProdutoDao();
+            
+            produtobean.setId_produto(Integer.parseInt(request.getParameter("id_produto")));
+            produtodao.deletar(produtobean);
         }
+        
+        
     }
 
     /**

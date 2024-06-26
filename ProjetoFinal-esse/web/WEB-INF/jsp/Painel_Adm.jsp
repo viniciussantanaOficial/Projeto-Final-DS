@@ -35,6 +35,11 @@
                             <h2>Home</h2>
                         </a>
                     </div>
+                    <div class="lsitagem-adm">
+                        <a class="listagem-p-adm" href="./tela-listagem-produtos"><i class="fa-solid fa-house"></i>
+                            <h2>Listagem produtos</h2>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="main-top">
@@ -64,6 +69,9 @@
                                     <h3>preco do produto</h3>
                                     <input type="number" step="0.01" name="valor" >
                                 </div>
+                                <div>
+                                    <form>
+                                     </div>
                                 <div>
                                     <button type="submit">Cadastrar</button>
                                 </div>

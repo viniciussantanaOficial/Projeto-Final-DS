@@ -72,6 +72,10 @@
         <servlet-name>ProdutoUnicoController</servlet-name>
         <servlet-class>controller.ProdutoUnicoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListagemProdutosController</servlet-name>
+        <servlet-class>controller.ListagemProdutosController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -155,6 +159,10 @@
     <servlet-mapping>
         <servlet-name>ProdutoUnicoController</servlet-name>
         <url-pattern>/produtoUnico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListagemProdutosController</servlet-name>
+        <url-pattern>/telaLprodutos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

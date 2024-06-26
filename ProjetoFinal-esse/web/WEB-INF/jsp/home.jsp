@@ -41,7 +41,7 @@
                     </div>
                     <div class="icone-header">
                         <c:choose>
-                            <c:when test="${id_usuario == 2}">
+                            <c:when test="${adm == true}">
                                 <div class="perfil-tela-adm">
                                     <i class="fa-solid fa-bars"></i>
                                     <select name="example">

@@ -18,6 +18,7 @@ import modoBean.ProdutoBean;
 import modoBean.Projeto;
 import modoBean.UsuarioBean;
 import modoDao.ProdutoDao;
+import modoDao.UsuarioDao;
 
 /**
  *
@@ -43,6 +44,14 @@ public class HomeController extends HttpServlet {
         List<ProdutoBean> produtos = dao.lertodos();
         float total = 0;
 
+        if (UsuarioBean.isAdmS()) {
+            UsuarioDao u = new UsuarioDao();
+            List<UsuarioBean> usuarios = u.getUsuarioById(UsuarioBean.getId_usuarioStatic());
+            request.setAttribute("adm", true);
+        } else {
+            request.setAttribute("adm", false);
+        }
+        
         for (ProdutoBean produto : produtos) {
             if (produto.getImagem() != null) {
                 String imagemBase64 = Base64.getEncoder().encodeToString(produto.getImagem());
