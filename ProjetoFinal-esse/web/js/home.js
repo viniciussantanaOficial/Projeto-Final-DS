@@ -7,3 +7,5 @@
         document.getElementById('perfil-tela-adm').addEventListener('blur', function() {
             document.getElementById('perfil-tela-adm').style.display = 'none';
         });
+        
+    

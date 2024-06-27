@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author vnici
  */
-public class CheckoutController extends HttpServlet {
+public class CheckoutPagamentoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,12 +30,10 @@ public class CheckoutController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       try (PrintWriter out = response.getWriter()) {
-            String url = "/WEB-INF/jsp/checkout.jsp";
+       response.setContentType("text/html;charset=UTF-8");
+        String url = "/WEB-INF/jsp/checkoutPagamento.jsp";
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

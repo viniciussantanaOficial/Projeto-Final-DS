@@ -75,20 +75,13 @@ public class TelaAdmController extends HttpServlet {
             produtobean.setNome(request.getParameter("nome-produto"));
             produtobean.setCategoria(Integer.parseInt(request.getParameter("select-categoria")));
             produtobean.setValor(Float.parseFloat(request.getParameter("valor")));
+            produtobean.setDescricao(request.getParameter("descricao"));
             produtobean = produtodao.adicionarImagem(produtobean, request.getPart("part"));
             
             produtodao.create(produtobean);
             response.sendRedirect("./telaadm");
         }   
-        if(url.equals("/cadastrarProduto")) {
-            ProdutoBean produtobean = new ProdutoBean();
-            ProdutoDao produtodao = new ProdutoDao();
-            
-            produtobean.setId_produto(Integer.parseInt(request.getParameter("id_produto")));
-            produtodao.deletar(produtobean);
-        }
-        
-        
+    
     }
 
     /**

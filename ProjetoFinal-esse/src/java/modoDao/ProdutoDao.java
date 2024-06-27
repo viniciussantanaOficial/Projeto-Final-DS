@@ -44,6 +44,7 @@ public class ProdutoDao {
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
+                p.setDescricao(rs.getString("descricao"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
@@ -66,11 +67,12 @@ public class ProdutoDao {
             Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareStatement("insert into produtos(categoria_id,nome,imagem,valor) values(?,?,?,?)");
+            stmt = conexao.prepareStatement("insert into produtos(categoria_id,nome,imagem,valor,descricao) values(?,?,?,?,?)");
             stmt.setInt(1, produto.getCategoria());
             stmt.setString(2, produto.getNome());
             stmt.setBytes(3, produto.getImagem());
             stmt.setFloat(4, produto.getValor());
+            stmt.setString(5,produto.getDescricao());
             
             stmt.executeUpdate();
             stmt.close();
@@ -111,6 +113,7 @@ public class ProdutoDao {
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
+                p.setDescricao(rs.getString("descricao"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
@@ -143,6 +146,7 @@ public class ProdutoDao {
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
+                 p.setDescricao(rs.getString("descricao"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
@@ -178,6 +182,31 @@ public class ProdutoDao {
             e.printStackTrace();
         }
     }
+    
+    public boolean isProdutoNoCarrinho(int produtoId, int usuarioId) {
+    boolean exists = false;
+    try {
+        Connection conexao = Conexao.getConn();
+        PreparedStatement stmt = null;
+
+        stmt = conexao.prepareStatement("SELECT COUNT(*) FROM carrinho WHERE produto_id = ? AND usuario_id = ?");
+        stmt.setInt(1, produtoId);
+        stmt.setInt(2, usuarioId);
+
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next() && rs.getInt(1) > 0) {
+            exists = true;
+        }
+
+        rs.close();
+        stmt.close();
+        conexao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return exists;
+}
+
 }
     
 

@@ -49,144 +49,148 @@
 
         <div class="container">
             <c:choose>
-    <c:when test="${empty produto}">
-        <h3 id="emptyCartMessage"></h3>
-        <div class="empty-cart-message">
-            <h5>SEU CARRINHO ESTÁ VAZIO</h5>
-            <p>Quando adicionar algo ao seu carrinho de compras, aparecerá uma mensagem aqui. Pronto para começar?</p>
-            <button onclick="location.href='./home'" class="btn-start-shopping">COMEÇAR</button>
-        </div>
-    </c:when>
-    <c:otherwise>
-        <div class="row">
-            <div class="col-xl-8">
-                <div class="card border shadow-none">
-                    <div class="card-body">
-                        <c:forEach items="${produto}" var="p">
-                            <div class="d-flex align-items-start border-bottom pb-3">
-                                <div class="me-4">
-                                    <img style="width: 100%; height: 215px" class="avatar-lg rounded"
-                                         src="data:image/jpeg;base64,${p.id_produto.imagemBase64}" alt="100%x280">
-                                </div>
-                                <div class="flex-grow-1 align-self-center overflow-hidden">
-                                    <div>
-                                        <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${p.id_produto.nome}</a></h5>
-                                        <p class="text-muted mb-0">
-                                            <i class="bx bxs-star text-warning"></i>
-                                            <i class="bx bxs-star text-warning"></i>
-                                            <i class="bx bxs-star text-warning"></i>
-                                            <i class="bx bxs-star text-warning"></i>
-                                            <i class="bx bxs-star-half text-warning"></i>
-                                        </p>
-                                        <p class="mb-0 mt-1">Color : <span class="fw-medium">Gray</span></p>
-                                    </div>
-                                </div>
-                                <form action="deletar-carrinho" method="post" class="flex-shrink-0 ms-2">
-                                    <input type="hidden" id="idProduto" name="idProduto" value="${p.id_produto.id_produto}">
-                                    <ul class="list-inline mb-0 font-size-16">
-                                        <li class="list-inline-item">
-                                            <button type="submit" class="text-muted px-1">
-                                              <i class="mdi mdi-trash-can-outline"></i></button>  
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </form>
+                <c:when test="${empty produto}">
+                    <h3 id="emptyCartMessage"></h3>
+                    <div class="empty-cart-message">
+                        <h5>SEU CARRINHO ESTÁ VAZIO</h5>
+                        <p>Quando adicionar algo ao seu carrinho de compras, aparecerá uma mensagem aqui. Pronto para começar?</p>
+                        <button onclick="location.href = './home'" class="btn-start-shopping">COMEÇAR</button>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                   <div class="row">
+    <div class="col-xl-8">
+        <div class="card border shadow-none">
+            <div class="card-body">
+                <c:forEach items="${produto}" var="p">
+                    <div class="d-flex align-items-start border-bottom pb-3">
+                        <div class="me-4">
+                            <img style="width: 100%; height: 215px" class="avatar-lg rounded"
+                                 src="data:image/jpeg;base64,${p.id_produto.imagemBase64}" alt="100%x280">
+                        </div>
+                        <div class="flex-grow-1 align-self-center overflow-hidden">
+                            <div>
+                                <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${p.id_produto.nome}</a></h5>
+                                <p class="text-muted mb-0">
+                                    <i class="bx bxs-star text-warning"></i>
+                                    <i class="bx bxs-star text-warning"></i>
+                                    <i class="bx bxs-star text-warning"></i>
+                                    <i class="bx bxs-star text-warning"></i>
+                                    <i class="bx bxs-star-half text-warning"></i>
+                                </p>
+                                <p class="mb-0 mt-1">R$${p.id_produto.valor} <span class="fw-medium">Gray</span></p>
                             </div>
-                        </c:forEach>
-                        <div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="mt-3">
-                                        <p class="text-muted mb-2">Price</p>
-                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del class="font-size-16 fw-normal">$500</del></span>$450</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="mt-3">
-                                        <p class="text-muted mb-2">Quantity</p>
-                                        <div class="d-inline-flex">
-                                            <select class="form-select form-select-sm w-xl">
-                                                <option value="1">1</option>
-                                                <option value="2" selected="">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mt-3">
-                                        <p class="text-muted mb-2">Total</p>
-                                        <h5>$900</h5>
-                                    </div>
+                        </div>
+                        <form action="deletar-carrinho" method="post" class="flex-shrink-0 ms-2">
+                            <input type="hidden" id="idProduto" name="idProduto" value="${p.id_produto.id_produto}">
+                            <ul class="list-inline mb-0 font-size-16">
+                                <li class="list-inline-item">
+                                    <button type="submit" class="text-muted px-1">
+                                        <i class="mdi mdi-trash-can-outline"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <!-- Mover quantidade e total para dentro do loop -->
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <div class="mt-3">
+                                <p class="text-muted mb-2">Produto</p>
+                                <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del class="font-size-16 fw-normal">$500</del></span>R$${p.id_produto.valor}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="mt-3">
+                                <p class="text-muted mb-2">Quantidade</p>
+                                <div class="d-inline-flex">
+                                    <select class="form-select form-select-sm w-xl" name="quantidade-${p.id_produto.id_produto}">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col-sm-6">
-                        <a href="ecommerce-products.html" class="btn btn-link text-muted">
-                            <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-end mt-2 mt-sm-0">
-                            <a href="ecommerce-checkout.html" class="btn btn-success">
-                                <i class="mdi mdi-cart-outline me-1"></i> Checkout
-                            </a>
+                        <div class="col-md-3">
+                            <div class="mt-3">
+                                <p class="text-muted mb-2">Total</p>
+                                <h5>R$<span class="total-produto">${p.id_produto.valor * quantidade}</span></h5>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </c:forEach>
             </div>
-            <div class="col-xl-4">
-                <div class="mt-5 mt-lg-0">
-                    <div class="card border shadow-none">
-                        <div class="card-header bg-transparent border-bottom py-3 px-4">
-                            <h5 class="font-size-16 mb-0">Order Summary <span class="float-end">#MN0124</span></h5>
-                        </div>
-                        <div class="card-body p-4 pt-2">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Sub Total :</td>
-                                            <td class="text-end">$ 780</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Discount :</td>
-                                            <td class="text-end">- $ 78</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping Charge :</td>
-                                            <td class="text-end">$ 25</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Estimated Tax :</td>
-                                            <td class="text-end">$ 18.20</td>
-                                        </tr>
-                                        <tr class="bg-light">
-                                            <th>Total :</th>
-                                            <td class="text-end">
-                                                <span class="fw-bold">
-                                                    $ 745.2
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-sm-6">
+                <a href="ecommerce-products.html" class="btn btn-link text-muted">
+                    <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end mt-2 mt-sm-0">
+                    <form action="proxima-pagina" method="post">
+                        <a href="/checkoutPagamento" class="btn btn-success">
+                        <i class="mdi mdi-cart-outline me-1"></i> Checkout
+                    </a>
+                    </form>
+                    
                 </div>
             </div>
         </div>
-    </c:otherwise>
-</c:choose>
-            
-             <script src="./js/js.js"></script>
+    </div>
+    <div class="col-xl-4">
+        <div class="mt-5 mt-lg-0">
+            <div class="card border shadow-none">
+                <div class="card-header bg-transparent border-bottom py-3 px-4">
+                    <h5 class="font-size-16 mb-0">Order Summary <span class="float-end">#MN0124</span></h5>
+                </div>
+                <div class="card-body p-4 pt-2">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td>Sub Total :</td>
+                                    <td class="text-end">$ 780</td>
+                                </tr>
+                                <tr>
+                                    <td>Discount :</td>
+                                    <td class="text-end">- $ 78</td>
+                                </tr>
+                                <tr>
+                                    <td>Shipping Charge :</td>
+                                    <td class="text-end">$ 25</td>
+                                </tr>
+                                <tr>
+                                    <td>Estimated Tax :</td>
+                                    <td class="text-end">$ 18.20</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <th>Total :</th>
+                                    <td class="text-end">
+                                        <span class="fw-bold">
+                                            $ 745.2
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </c:otherwise>
+            </c:choose>
+
+
+
+            <script src="./js/js.js"></script>
 </html>

@@ -79,17 +79,23 @@ public class CarrinhoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
+        
+        
         if (url.equals("/deletar-carrinho")) {
             System.out.println("Delete");
             CarrinhoDao dao = new CarrinhoDao();
             int id = Integer.parseInt(request.getParameter("idProduto"));
             dao.deleteCarrinho(id);
             response.sendRedirect("./carrinho");
-
-        } else {
+            
+        }else if(url.equals("/proxima-pagina")){
+            response.sendRedirect("./proxima-pagina");
+        }
+        else {
             processRequest(request, response);
         }
-
+        
+        
     }
 
     /**

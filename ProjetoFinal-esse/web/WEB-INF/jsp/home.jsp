@@ -43,29 +43,30 @@
                         <c:choose>
                             <c:when test="${adm == true}">
                                 <div class="perfil-tela-adm">
-                                    <i class="fa-solid fa-bars"></i>
-                                    <select name="example">
-                                        <option value="cadastrar-produto-adm">Cadastrar Produtos</option>
-                                        <option value="listagem-usuarios-adm">Listagem de Usuarios</option>
-                                    </select>
-                                </div>
+                                    <form action="sair" method="post">
+                                            <button type="submit"><i class="fa-solid fa-gear"></i></button>
+                                            <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+                                        </form>
                             </c:when>
                             <c:otherwise>
                                 <c:choose>
                                     <c:when test="${id_usuario != 0}">
                                         <form action="sair" method="post">
                                             <button type="submit">SAIR</button>
+                                            <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
                                         </form>
-                                         <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a href="./logar"><i class="fa-solid fa-user"></i>ASSDA</a>
+                                        <div class="seprando-icones-input">
+                                            <a href="./logar"><i class="fa-solid fa-user"></i>Cadastra-se</a>
+
+                                        </div>
                                     </c:otherwise>
                                 </c:choose>
-                                
 
-                                </c:otherwise>
-                            </c:choose>
+
+                            </c:otherwise>
+                        </c:choose>
 
                     </div>
                 </div>
@@ -105,7 +106,7 @@
             <div class="produtos-main">
                 <c:forEach items="${produto}" var="produto">
                     <div class="card">
-                        <div class="card-image"><img style="width: 400px; height: 210px" class="img-fluid"
+                        <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
                                                      src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
                         <div class="category">
                             <h4 class="card-title">${produto.nome} </h4>
@@ -121,45 +122,45 @@
             </div>
         </main>
         <footer class="bg-body-tertiary text-center text-lg-start">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!--Grid row-->
-    <div class="row">
-      <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer text</h5>
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Footer text</h5>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-        </p>
-      </div>
-      <!--Grid column-->
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                            voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <!--Grid column-->
 
-      <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer text</h5>
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Footer text</h5>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-        </p>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                            voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 Ls_video
-    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Ls_video
+                <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
 
 
 

@@ -48,18 +48,19 @@
                         </div>
                     </nav>
                 </header>
-                <main class="container-produto-unico">
-                    <div class="card-right">
-                        <div class="separar-carrinho">
-                            <div class="card-produto">
-                                <div class="cartao-image">
-                                    <img class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}"
-                                        alt="${produto.nome}">
+                <main>
+                    <div class="container-produto-unico">
+                        <div class="card-right">
+                            <div class="separar-carrinho">
+                                <div class="card-produto">
+                                    <div class="cartao-image">
+                                        <img class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}"
+                                            alt="${produto.nome}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carrinho-lateral">
+                        <div class="carrinho-lateral">
                             <div class="meu-carrinho">
                                 <h3>Seu carrinho</h3>
                             </div>
@@ -76,18 +77,70 @@
                                         <h6>R$${produto.valor}</h6>
                                     </div>
                                 </div>
+                                    <div class="valor-total-produtos">
+                                    <h6>Descricao do produto</h6>
+                                    <div class="preco-total">
+                                        <h6>${produto.descricao}</h6>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-right-low">
                                 <div class="buttons">
                                     <div class="button1">
                                         <a href="./home"><button>Continuar comprando</button></a>
                                     </div>
-                                     <form action="add-carrinho" method="post" class="button2">
-                                        <input type="hidden" name="idProduto" value="${produto.id_produto}" id="idProduto"> 
+                                    <form action="add-carrinho" method="post" class="button2">
+                                        <input type="hidden" name="idProduto" value="${produto.id_produto}"
+                                            id="idProduto">
                                         <button type="submit">Adicionar ao carrinho</button>
-                                    </form
+                                    </form </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="produtos-main">
+
+                            <div class="card">
+                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
+                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                                <div class="category">
+                                    <h4 class="card-title">${produto.nome} </h4>
+                                    <form action="produtoUnicoPag" method="post">
+                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
+                                            name="idProduto">
+                                        <button type="submit" class="btn-car"><i
+                                                class="fa-solid fa-cart-shopping"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
+                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                                <div class="category">
+                                    <h4 class="card-title">${produto.nome} </h4>
+                                    <form action="produtoUnicoPag" method="post">
+                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
+                                            name="idProduto">
+                                        <button type="submit" class="btn-car"><i
+                                                class="fa-solid fa-cart-shopping"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
+                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
+                                <div class="category">
+                                    <h4 class="card-title">${produto.nome} </h4>
+                                    <form action="produtoUnicoPag" method="post">
+                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
+                                            name="idProduto">
+                                        <button type="submit" class="btn-car"><i
+                                                class="fa-solid fa-cart-shopping"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+
                         </div>
 
 
@@ -119,34 +172,34 @@
                         </section>
                         <section class="mb-4">
                             <p>
-                                
+
                             </p>
                         </section>
                         <section class="">
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                                    
+
                                     <c:choose>
-                            <c:when test="${id_usuario != 0}">
-                                <a href="./logar"><i class="fa-solid fa-user"></i></a>
-                                </c:when>
-                                <c:otherwise>
-                             <h5 class="text-uppercase">Links</h5>
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a class="text-body" href="./login">Login</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="./cadastro">Cadastro</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-body" href="./home">Pagina inicial</a>
-                                        </li>
-                                    </ul>
-                            </c:otherwise>
-                        </c:choose>
-                                    
-                                </div>     
+                                        <c:when test="${id_usuario != 0}">
+                                            <a href="./logar"><i class="fa-solid fa-user"></i></a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <h5 class="text-uppercase">Links</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li>
+                                                    <a class="text-body" href="./login">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a class="text-body" href="./cadastro">Cadastro</a>
+                                                </li>
+                                                <li>
+                                                    <a class="text-body" href="./home">Pagina inicial</a>
+                                                </li>
+                                            </ul>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                </div>
                             </div>
                         </section>
                     </div>

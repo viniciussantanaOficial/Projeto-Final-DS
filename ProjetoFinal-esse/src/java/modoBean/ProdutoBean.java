@@ -17,17 +17,19 @@ public class ProdutoBean {
     private byte[] imagem;
     private String imagemBase64;
     private Float valor;
+    private String descricao;
 
     public ProdutoBean() {
     }
 
-    public ProdutoBean(int id_produto, int categoria, String nome, byte[] imagem, String imagemBase64, Float valor) {
+    public ProdutoBean(int id_produto, int categoria, String nome, byte[] imagem, String imagemBase64, Float valor, String descricao) {
         this.id_produto = id_produto;
         this.categoria = categoria;
         this.nome = nome;
         this.imagem = imagem;
         this.imagemBase64 = imagemBase64;
         this.valor = valor;
+        this.descricao = descricao;
     }
 
     public int getId_produto() {
@@ -77,7 +79,15 @@ public class ProdutoBean {
     public void setValor(Float valor) {
         this.valor = valor;
     }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
     
     
-    
+
 }

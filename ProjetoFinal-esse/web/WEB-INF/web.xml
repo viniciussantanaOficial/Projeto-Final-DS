@@ -76,6 +76,10 @@
         <servlet-name>ListagemProdutosAdminController</servlet-name>
         <servlet-class>controller.ListagemProdutosAdminController</servlet-class>
     </servlet>
+   <servlet>
+    <servlet-name>CheckoutPagamentoController</servlet-name>
+    <servlet-class>controller.CheckoutPagamentoController</servlet-class>
+</servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -168,12 +172,18 @@
         <servlet-name>ProdutoUnicoController</servlet-name>
         <url-pattern>/add-carrinho</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet-mapping>
         <servlet-name>ListagemProdutosAdminController</servlet-name>
         <url-pattern>/listagem-adm</url-pattern>
     </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>CheckoutPagamentoController</servlet-name>
+    <url-pattern>/checkoutPagamento</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>CheckoutPagamentoController</servlet-name>
+    <url-pattern>/proxima-pagina</url-pattern>
+</servlet-mapping>
     <session-config>
         <session-timeout>
             30

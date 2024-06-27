@@ -1,3 +1,4 @@
+
 <%-- Document : Painel_Adm Created on : 10/06/2024, 14:35:16 Author : Senai --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -35,11 +36,6 @@
                             <h2>Home</h2>
                         </a>
                     </div>
-                    <div class="lsitagem-adm">
-                        <a class="listagem-p-adm" href="./listagem-adm"><i class="fa-solid fa-house"></i>
-                            <h2>Listagem produtos</h2>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="main-top">
@@ -69,9 +65,10 @@
                                     <h3>preco do produto</h3>
                                     <input type="number" step="0.01" name="valor" >
                                 </div>
-                                <div>
-                                    <form>
-                                     </div>
+                                 <div class="Preco-produto">
+                                    <h3>descricao</h3>
+                                    <input type="text" name="descricao" >
+                                </div>
                                 <div>
                                     <button type="submit">Cadastrar</button>
                                 </div>

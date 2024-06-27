@@ -210,3 +210,27 @@
 .card{
     margin-right: 5px;
 }
+
+.container-produto-unico-carrinho{
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+    gap: 45px;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.produtos-main-carrinho{
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+    gap: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
