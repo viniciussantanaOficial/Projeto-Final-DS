@@ -36,6 +36,25 @@ const selectMes = document.getElementById('mes-cartao');
         selectAno.appendChild(option);
     }
 
+    const frmEndereco = document.getElementById('frmEndereco');
+
+    frmEndereco.addEventListener('submit', function(event){
+        event.preventDefault();
+
+        const inputs = document.getElementsByClassName('input');
+        let j = 0; 
+        for(let i = 0; i < inputs.length; i++){
+            if(inputs[0].value.trim() === ""){
+                j = 1;
+            }
+        }
+        if(j == 1){
+            alert("Preencha todos os dados corretamente!");
+        }else{
+            frmEndereco.submit();
+        }
+    });
+
 /////////////////////////////////////////////////////////////
 
 

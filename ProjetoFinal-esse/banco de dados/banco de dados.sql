@@ -61,6 +61,7 @@ CREATE TABLE produtos (
     imagem LONGBLOB,
     descricao VARCHAR(500),
     valor FLOAT(8,2),
+    quantidade VARCHAR(100),
     FOREIGN KEY (categoria_id) REFERENCES categorias(id_categoria)
 );
 

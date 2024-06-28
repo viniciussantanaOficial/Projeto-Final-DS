@@ -67,7 +67,7 @@
             </nav>
         </header>
 
-        <form action="./checkoutPagamento" method="post">
+        <form id="frmEndereco" action="./checkoutPagamento" method="post">
             <div class="pagamento-tela">
                 <div class="endereco">
                     <div class="endereco-title">
@@ -76,31 +76,31 @@
                     <div class="rua-cep">
                     <div class="rua">
                         <h6>Rua</h6>
-                        <input type="text" name="rua" placeholder="Rua">
+                        <input class="input" type="text" name="rua" placeholder="Rua">
                     </div>
                     <div class="cep">
                         <h6>CEP</h6>
-                        <input type="text" name="cep" placeholder="CEP">
+                        <input class="input" type="text" name="cep" placeholder="CEP">
                     </div>
                 </div>
                 <div class="numero-bairro">
                     <div class="numero">
                         <h6>Número</h6>
-                        <input type="text" name="numero" placeholder="Número">
+                        <input class="input" type="text" name="numero" placeholder="Número">
                     </div>
                     <div class="bairro">
                         <h6>Bairro</h6>
-                        <input type="text" name="bairro" placeholder="Bairro">
+                        <input class="input" type="text" name="bairro" placeholder="Bairro">
                     </div>
                 </div>
                 <div class="cidade-bairro">
                     <div class="cidade">
                         <h6>Cidade</h6>
-                        <input type="text" name="cidade" placeholder="Cidade">
+                        <input class="input" type="text" name="cidade" placeholder="Cidade">
                     </div>
                     <div class="estado">
                         <h6>Estado</h6>
-                        <input type="text" name="estado" placeholder="Estado">
+                        <input class="input" type="text" name="estado" placeholder="Estado">
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                             <h6>Número do Cartão</h6>
                         </div>
                         <div class="input-numero-cartao2">
-                            <input class="input-numero-cartao" id="input-numero-cartao" name="numero_cartao" type="text" placeholder="0000 0000 0000 0000">
+                            <input class="input" class="input-numero-cartao" id="input-numero-cartao" name="numero_cartao" type="text" placeholder="0000 0000 0000 0000">
                         </div>
                     </div>
         
@@ -122,7 +122,7 @@
                                 <h6>Nome no Cartão</h6>
                             </div>
                             <div class="input-nome-cartao">
-                                <input class="input-nome-cartao" name="nome_cartao" type="text" placeholder="Nome Completo">
+                                <input class="input" class="input-nome-cartao" name="nome_cartao" type="text" placeholder="Nome Completo">
                             </div>
                         </div>
         
@@ -141,12 +141,13 @@
                                 </select>
                             </div>
                             <div class="input-cvv">
-                                <input type="text" name="cvv" placeholder="CVV">
+                                <input class="input" type="text" name="cvv" placeholder="CVV">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <button type="submit">Finalizar Compra</button>
         </form>
                           
 

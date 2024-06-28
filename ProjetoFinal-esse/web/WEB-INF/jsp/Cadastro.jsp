@@ -40,12 +40,12 @@
 
                         <div class="input-box">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control form-control-lg" required />
+                            <input type="email" id="email" name="email" placeholder="Digite seu email" class="form-control form-control-lg" required />
                         </div>
 
                         <div class="input-box">
                             <label for="phone">Telefone</label>
-                            <input id="phone" type="text" name="phone"  required>
+                            <input id="phone" type="text" name="phone" placeholder="Digite seu telefone"  required>
                         </div>                       
 
                         <div class="input-box">
@@ -54,12 +54,12 @@
                         </div>
                         <div class="input-box">
                             <label for="cpf">cpf</label>
-                            <input id="cpf" type="text" name="cpf"  required>
+                            <input id="cpf" type="text" name="cpf" placeholder="Digite seu cpf" required>
                         </div>
 
                         <div class="input-box">
                             <label for="passaword">Senha</label>
-                            <input type="password" id="password" name="password" class="form-control form-control-lg" required=""/>
+                            <input type="password" id="password" name="password" placeholder="Digite sua senha" class="form-control form-control-lg" required=""/>
                         </div>
                     </div>
 

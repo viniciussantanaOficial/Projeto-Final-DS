@@ -33,9 +33,15 @@ public class CheckoutPagamentoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       response.setContentType("text/html;charset=UTF-8");
-        String url = "/WEB-INF/jsp/tela-checkout-pagamento.jsp";
-        RequestDispatcher d = getServletContext().getRequestDispatcher(url);
+        String url = getServletContext().getContextPath();
+        if (url.equals("/checkoutPagamento")) {
+            String nxt = "/WEB-INF/jsp/index.jsp";
+            RequestDispatcher d = getServletContext().getRequestDispatcher(nxt);
+            d.forward(request, response);
+        }
+        response.setContentType("text/html;charset=UTF-8");
+        String nxt = "/WEB-INF/jsp/tela-checkout-pagamento.jsp";
+        RequestDispatcher d = getServletContext().getRequestDispatcher(nxt);
         d.forward(request, response);
     }
 
@@ -66,8 +72,8 @@ public class CheckoutPagamentoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-          String url = request.getServletPath();
-        if(url.equals("/proxima-pagina")) {
+        String url = request.getServletPath();
+        if (url.equals("/proxima-pagina")) {
             EnderecoBean enderecobean = new EnderecoBean();
             EnderecoDao enderecodao = new EnderecoDao();
             enderecobean.setRua(request.getParameter("rua"));
@@ -75,11 +81,11 @@ public class CheckoutPagamentoController extends HttpServlet {
             int cep = Integer.parseInt(request.getParameter("cep"));
             enderecobean.setCep(cep);
             enderecobean.setEstado(request.getParameter("estado"));
-             enderecobean.setCidade(request.getParameter("cidade"));
-             enderecobean.setBairro(request.getParameter("bairro"));
+            enderecobean.setCidade(request.getParameter("cidade"));
+            enderecobean.setBairro(request.getParameter("bairro"));
             enderecodao.createCarrinho(enderecobean);
             response.sendRedirect("./home");
-        }   
+        }
     }
 
     /**

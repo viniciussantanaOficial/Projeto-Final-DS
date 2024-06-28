@@ -89,7 +89,7 @@ public class HomeController extends HttpServlet {
         if(url.equals("/produtoUnicoPag")){
             Projeto.setIdProduto(Integer.parseInt(request.getParameter("idProduto")));
             response.sendRedirect("./produtoUnico");
-        }else if(url.equals("/sair")){
+        }else if(url.equals("sair")){
             System.out.println("    Re");
             UsuarioBean.setId_usuarioStatic(0);
             UsuarioBean.setAdmS(false);

@@ -45,7 +45,14 @@ public class CarrinhoController extends HttpServlet {
                 produto.getId_produto().setImagemBase64(imagemBase64);
             }
         }
+
         request.setAttribute("produto", carrinho);
+       
+
+        
+
+        // encaminha a requisição para JSP do carrinho
+        request.getRequestDispatcher("/WEB-INF/jsp/carrinho.jsp").forward(request, response);
 
         String url = "/WEB-INF/jsp/carrinho.jsp";
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
@@ -79,19 +86,18 @@ public class CarrinhoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        
-        
-         if (url.equals("/deletar-carrinho")) {
-        CarrinhoDao dao = new CarrinhoDao();
-        int id = Integer.parseInt(request.getParameter("idProduto"));
-        dao.deleteCarrinho(id);
-        response.sendRedirect("./carrinho");
-    } else if (url.equals("/proxima-pagina")) {
-        response.sendRedirect("./checkoutPagamento");
-    } else {
-        processRequest(request, response);
+
+        if (url.equals("/deletar-carrinho")) {
+            CarrinhoDao dao = new CarrinhoDao();
+            int id = Integer.parseInt(request.getParameter("idProduto"));
+            dao.deleteCarrinho(id);
+            response.sendRedirect("./carrinho");
+        } else if (url.equals("/proxima-pagina")) {
+            response.sendRedirect("./checkoutPagamento");
+        } else {
+            processRequest(request, response);
+        }
     }
-}
 
     /**
      * Returns a short description of the servlet.
