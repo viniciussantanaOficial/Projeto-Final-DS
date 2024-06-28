@@ -12,6 +12,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modoBean.EnderecoBean;
+import modoBean.ProdutoBean;
+import modoDao.EnderecoDao;
 
 /**
  *
@@ -31,7 +34,7 @@ public class CheckoutPagamentoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        String url = "/WEB-INF/jsp/checkoutPagamento.jsp";
+        String url = "/WEB-INF/jsp/tela-checkout-pagamento.jsp";
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
@@ -63,6 +66,20 @@ public class CheckoutPagamentoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+          String url = request.getServletPath();
+        if(url.equals("/proxima-pagina")) {
+            EnderecoBean enderecobean = new EnderecoBean();
+            EnderecoDao enderecodao = new EnderecoDao();
+            enderecobean.setRua(request.getParameter("rua"));
+            enderecobean.setNumero(request.getParameter("numero"));
+            int cep = Integer.parseInt(request.getParameter("cep"));
+            enderecobean.setCep(cep);
+            enderecobean.setEstado(request.getParameter("estado"));
+             enderecobean.setCidade(request.getParameter("cidade"));
+             enderecobean.setBairro(request.getParameter("bairro"));
+            enderecodao.createCarrinho(enderecobean);
+            response.sendRedirect("./home");
+        }   
     }
 
     /**

@@ -19,6 +19,7 @@
                 <link href="./style/Tela_inicial.css" rel="stylesheet" type="text/css" />
                 <link href="./style/footer.css" rel="stylesheet" type="text/css" />
                 <link href="./style/carrinho-tela.css" rel="stylesheet" type="text/css" />
+                <link href="./style/produtoUnico.css" rel="stylesheet" type="text/css" />
             </head>
 
             <body>
@@ -48,167 +49,92 @@
                         </div>
                     </nav>
                 </header>
-                <main>
-                    <div class="container-produto-unico">
-                        <div class="card-right">
-                            <div class="separar-carrinho">
-                                <div class="card-produto">
-                                    <div class="cartao-image">
-                                        <img class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}"
-                                            alt="${produto.nome}">
-                                    </div>
-                                </div>
-                            </div>
+       <main>
+        <div class="container-produto-unico">
+            <div class="card-right">
+                <div class="separar-carrinho">
+                    <div class="card-produto">
+                        <div class="cartao-image">
+                            <img class="img-fluid" src="data:image/jpeg;base64,${produto.imagemBase64}" alt="${produto.nome}">
                         </div>
-                        <div class="carrinho-lateral">
-                            <div class="meu-carrinho">
-                                <h3>Seu carrinho</h3>
-                            </div>
-                            <div class="infos-text">
-                                <div class="category-cards">
-                                    <h4 class="card-title">${produto.nome}</h4>
-                                    <div class="item-carrinho">
-                                        <h6>1 item</h6>
-                                    </div>
-                                </div>
-                                <div class="valor-total-produtos">
-                                    <h6>Valor total do produto</h6>
-                                    <div class="preco-total">
-                                        <h6>R$${produto.valor}</h6>
-                                    </div>
-                                </div>
-                                    <div class="valor-total-produtos">
-                                    <h6>Descricao do produto</h6>
-                                    <div class="preco-total">
-                                        <h6>${produto.descricao}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-right-low">
-                                <div class="buttons">
-                                    <div class="button1">
-                                        <a href="./home"><button>Continuar comprando</button></a>
-                                    </div>
-                                    <form action="add-carrinho" method="post" class="button2">
-                                        <input type="hidden" name="idProduto" value="${produto.id_produto}"
-                                            id="idProduto">
-                                        <button type="submit">Adicionar ao carrinho</button>
-                                    </form </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="produtos-main">
-
-                            <div class="card">
-                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
-                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
-                                <div class="category">
-                                    <h4 class="card-title">${produto.nome} </h4>
-                                    <form action="produtoUnicoPag" method="post">
-                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
-                                            name="idProduto">
-                                        <button type="submit" class="btn-car"><i
-                                                class="fa-solid fa-cart-shopping"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
-                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
-                                <div class="category">
-                                    <h4 class="card-title">${produto.nome} </h4>
-                                    <form action="produtoUnicoPag" method="post">
-                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
-                                            name="idProduto">
-                                        <button type="submit" class="btn-car"><i
-                                                class="fa-solid fa-cart-shopping"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-image"><img style="width: 100%; height: 210px" class="img-fluid"
-                                        src="data:image/jpeg;base64,${produto.imagemBase64}" alt="100%x280"></div>
-                                <div class="category">
-                                    <h4 class="card-title">${produto.nome} </h4>
-                                    <form action="produtoUnicoPag" method="post">
-                                        <input type="hidden" value="${produto.id_produto}" id="idProduto"
-                                            name="idProduto">
-                                        <button type="submit" class="btn-car"><i
-                                                class="fa-solid fa-cart-shopping"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                </main>
-
-                <footer class="bg-body-tertiary text-center">
-                    <div id="footer-mainclass" class="container2 p-4">
-                        <section class="">
-                            <form action="">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-auto">
-                                        <p class="pt-2">
-                                            <strong>Email de contanto</strong>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-5 col-12">
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="email" id="form5Example24" class="form-control" />
-                                            <label class="form-label" for="form5Example24">Email address</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                            Enviar
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
-                        <section class="mb-4">
-                            <p>
-
-                            </p>
-                        </section>
-                        <section class="">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-                                    <c:choose>
-                                        <c:when test="${id_usuario != 0}">
-                                            <a href="./logar"><i class="fa-solid fa-user"></i></a>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <h5 class="text-uppercase">Links</h5>
-                                            <ul class="list-unstyled mb-0">
-                                                <li>
-                                                    <a class="text-body" href="./login">Login</a>
-                                                </li>
-                                                <li>
-                                                    <a class="text-body" href="./cadastro">Cadastro</a>
-                                                </li>
-                                                <li>
-                                                    <a class="text-body" href="./home">Pagina inicial</a>
-                                                </li>
-                                            </ul>
-                                        </c:otherwise>
-                                    </c:choose>
-
-                                </div>
-                            </div>
-                        </section>
                     </div>
-                </footer>
+                </div>
+            </div>
+            <div class="carrinho-lateral">
+                <div class="meu-carrinho">
+                    <h3>Seu carrinho</h3>
+                </div>
+                <div class="infos-text">
+                    <div class="category-cards">
+                        <h4 class="card-title">${produto.nome}</h4>
+                        <div class="item-carrinho">
+                            <h6>1 item</h6>
+                        </div>
+                    </div>
+                    <div class="valor-total-produtos">
+                        <h6>Valor total do produto</h6>
+                        <div class="preco-total">
+                            <h6>R$ ${produto.valor}</h6>
+                        </div>
+                    </div>
+                    <div class="valor-total-produtos">
+                        <h6>Descrição do produto</h6>
+                        <div class="preco-total">
+                            <h6>${produto.descricao}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right-low">
+                    <div class="buttons">
+                        <div class="button1">
+                            <a href="./home"><button>Continuar comprando</button></a>
+                        </div>
+                        <form action="add-carrinho" method="post" class="button2">
+                            <input type="hidden" name="idProduto" value="${produto.id_produto}" id="idProduto">
+                            <button type="submit">Adicionar ao carrinho</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">QUEM SOMOS?</h5>
 
+                    <p>
+                        Bem-vindo a nossa loja, aqui temos varias opcoes de vinho para voce e perfumes para ficar cheiroso!
+                    </p>
+                </div>
+                <!--Grid column-->
 
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">LOCALIZACAO</h5>
 
+                    <p>
+                        nossa loja fica localizada na rua maranhao 280 
+                        no centro de lodrina parana
+                    </p>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
 
-
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Ls_video
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
             </body>
             <script src="./js/pre_carrinho.js"></script>

@@ -81,22 +81,17 @@ public class CarrinhoController extends HttpServlet {
         String url = request.getServletPath();
         
         
-        if (url.equals("/deletar-carrinho")) {
-            System.out.println("Delete");
-            CarrinhoDao dao = new CarrinhoDao();
-            int id = Integer.parseInt(request.getParameter("idProduto"));
-            dao.deleteCarrinho(id);
-            response.sendRedirect("./carrinho");
-            
-        }else if(url.equals("/proxima-pagina")){
-            response.sendRedirect("./proxima-pagina");
-        }
-        else {
-            processRequest(request, response);
-        }
-        
-        
+         if (url.equals("/deletar-carrinho")) {
+        CarrinhoDao dao = new CarrinhoDao();
+        int id = Integer.parseInt(request.getParameter("idProduto"));
+        dao.deleteCarrinho(id);
+        response.sendRedirect("./carrinho");
+    } else if (url.equals("/proxima-pagina")) {
+        response.sendRedirect("./checkoutPagamento");
+    } else {
+        processRequest(request, response);
     }
+}
 
     /**
      * Returns a short description of the servlet.

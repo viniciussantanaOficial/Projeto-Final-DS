@@ -45,6 +45,7 @@ public class ProdutoDao {
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
                 p.setDescricao(rs.getString("descricao"));
+                 p.setQuantidade(rs.getInt("quantidade"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
@@ -67,12 +68,13 @@ public class ProdutoDao {
             Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareStatement("insert into produtos(categoria_id,nome,imagem,valor,descricao) values(?,?,?,?,?)");
+            stmt = conexao.prepareStatement("insert into produtos(categoria_id,nome,imagem,valor,descricao,quantidade) values(?,?,?,?,?,?)");
             stmt.setInt(1, produto.getCategoria());
             stmt.setString(2, produto.getNome());
             stmt.setBytes(3, produto.getImagem());
             stmt.setFloat(4, produto.getValor());
             stmt.setString(5,produto.getDescricao());
+            stmt.setInt(6,produto.getQuantidade());
             
             stmt.executeUpdate();
             stmt.close();
@@ -114,6 +116,7 @@ public class ProdutoDao {
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
                 p.setDescricao(rs.getString("descricao"));
+                p.setQuantidade(rs.getInt("quantidade"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
@@ -146,7 +149,8 @@ public class ProdutoDao {
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getFloat("valor"));
                 p.setCategoria(rs.getInt("categoria_id"));
-                 p.setDescricao(rs.getString("descricao"));
+                p.setDescricao(rs.getString("descricao"));
+                p.setQuantidade(rs.getInt("quantidade"));
                 Blob imagemBlob = rs.getBlob("imagem");
                 if (imagemBlob != null) {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());

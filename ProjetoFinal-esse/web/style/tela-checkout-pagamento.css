@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.pagamento-tela {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 50px;
+    align-content: stretch;
+    justify-content: start;
+    align-items: baseline;
+    margin-left: 50px;
+
+}
+
+
+h6 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.pagamento-tela input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.pagamento-tela input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button-cartao {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-efetuar-pagamento {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-efetuar-pagamento:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos específicos para o número do cartão */
+.numero-cartao {
+    display: grid;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.numero-letra-cartao {
+    flex: 1;
+}
+
+.input-numero-cartao {
+    flex: 2;
+}
+
+/* Estilos específicos para o nome no cartão */
+.nome-cartao {
+    display: grid;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nome-letra-cartao {
+    flex: 1;
+}
+
+.invalid {
+    border: 2px solid red;
+}
+
+.input-nome-cartao {
+    flex: 2;
+}
+
+/* Estilos específicos para a validade */
+.validade {
+    margin-bottom: 20px;
+    
+}
+
+.select-validade {
+    width: calc(50% - 5px);
+    margin-right: 5px;
+}
+
+/* Estilos específicos para o CPF */
+.cpf-cartao {
+    margin-bottom: 20px;
+}
+
+.rua-cep{
+
+    display: flex;
+    gap: 50px;
+}
+
+.cidade-bairro{
+
+    display: flex;
+    gap: 50px;
+}
+
+.numero-bairro{
+
+    display: flex;
+    gap: 50px;
+}
+

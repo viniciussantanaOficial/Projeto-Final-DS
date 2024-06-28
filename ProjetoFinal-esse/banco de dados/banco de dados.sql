@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-DROP DATABASE IF EXISTS ls_video;
+drop database ls_video;
 CREATE DATABASE ls_video;
 USE ls_video;
 
@@ -28,7 +28,9 @@ CREATE TABLE enderecos (
     rua VARCHAR(75) NOT NULL,
     numero INT NOT NULL,
     cep CHAR(9) NOT NULL,
-    complemento VARCHAR(75),
+    bairro varchar(100) not null,
+    cidade varchar(50) not null,
+    estado varchar(100) not null,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario)
 );
 
@@ -57,7 +59,7 @@ CREATE TABLE produtos (
     categoria_id INT,
     nome VARCHAR(255),
     imagem LONGBLOB,
-    descricao VARCHAR(100),
+    descricao VARCHAR(500),
     valor FLOAT(8,2),
     FOREIGN KEY (categoria_id) REFERENCES categorias(id_categoria)
 );

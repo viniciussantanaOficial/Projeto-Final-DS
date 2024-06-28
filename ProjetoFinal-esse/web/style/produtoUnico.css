@@ -1,0 +1,141 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    padding: 25px;
+    background: rgb(255,255,255);
+
+   
+}
+
+/* Container principal */
+.container-produto-unico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Card do produto */
+.card-right, .carrinho-lateral {
+  
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card-right {
+    margin-right: 10px; /* Adiciona um espaço à direita do card-right */
+}
+
+.card-produto {
+    margin-bottom: 20px;
+}
+
+.card-produto img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card-produto img:hover {
+    transform: scale(1.05);
+}
+
+/* Infos */
+.meu-carrinho h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.infos-text .category-cards, .valor-total-produtos {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.category-cards h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.item-carrinho h6, .valor-total-produtos h6 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.preco-total h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #333333;
+}
+
+.valor-total-produtos {
+    margin-bottom: 10px;
+    display: grid;
+}
+
+.valor-total-produtos .preco-total h6 {
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons .button1, .buttons .button2 {
+    flex: 1;
+    margin: 0 5px;
+}
+
+button {
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #555555;
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+    .card-right, .carrinho-lateral {
+        width: 48%;
+    }
+
+    .carrinho-lateral {
+        margin-left: 10px; /* Adiciona um espaço à esquerda do carrinho-lateral em telas maiores */
+    }
+}

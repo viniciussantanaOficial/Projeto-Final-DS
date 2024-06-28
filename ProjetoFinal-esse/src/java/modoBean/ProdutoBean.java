@@ -18,19 +18,7 @@ public class ProdutoBean {
     private String imagemBase64;
     private Float valor;
     private String descricao;
-
-    public ProdutoBean() {
-    }
-
-    public ProdutoBean(int id_produto, int categoria, String nome, byte[] imagem, String imagemBase64, Float valor, String descricao) {
-        this.id_produto = id_produto;
-        this.categoria = categoria;
-        this.nome = nome;
-        this.imagem = imagem;
-        this.imagemBase64 = imagemBase64;
-        this.valor = valor;
-        this.descricao = descricao;
-    }
+    private int Quantidade;
 
     public int getId_produto() {
         return id_produto;
@@ -87,7 +75,27 @@ public class ProdutoBean {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
 
-}
+    public int getQuantidade() {
+        return Quantidade;
+    }
+
+    public void setQuantidade(int Quantidade) {
+        this.Quantidade = Quantidade;
+    }
+
+    public ProdutoBean(int id_produto, int categoria, String nome, byte[] imagem, String imagemBase64, Float valor, String descricao, int Quantidade) {
+        this.id_produto = id_produto;
+        this.categoria = categoria;
+        this.nome = nome;
+        this.imagem = imagem;
+        this.imagemBase64 = imagemBase64;
+        this.valor = valor;
+        this.descricao = descricao;
+        this.Quantidade = Quantidade;
+    }
+
+    public ProdutoBean() {
+    }
+
+    }

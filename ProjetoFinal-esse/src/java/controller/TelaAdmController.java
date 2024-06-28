@@ -67,7 +67,7 @@ public class TelaAdmController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String quantidadeStr = request.getParameter("quantidade");
         String url = request.getServletPath();
         
         if(url.equals("/cadastrarProduto")) {
@@ -76,6 +76,8 @@ public class TelaAdmController extends HttpServlet {
             produtobean.setCategoria(Integer.parseInt(request.getParameter("select-categoria")));
             produtobean.setValor(Float.parseFloat(request.getParameter("valor")));
             produtobean.setDescricao(request.getParameter("descricao"));
+           int quantidade = Integer.parseInt(quantidadeStr);
+            produtobean.setQuantidade(quantidade);
             produtobean = produtodao.adicionarImagem(produtobean, request.getPart("part"));
             
             produtodao.create(produtobean);

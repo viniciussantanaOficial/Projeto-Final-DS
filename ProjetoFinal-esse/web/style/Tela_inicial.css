@@ -65,6 +65,7 @@ nav{
 
     display: flex;
     align-items: center;
+    gap: 30px;
 }
 
 .buscar-header{
@@ -100,10 +101,16 @@ nav{
 
 .fa-gear{
     
-    color: black;
+    color: white;
 }
 
-
+.fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    position: absolute;
+    top: 22px;
+    left: 862px;
+    color: black;
+}
 
 
 

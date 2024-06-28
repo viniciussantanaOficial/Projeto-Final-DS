@@ -27,7 +27,7 @@
 
                 <div class="main-left">
                     <div class="user-painel-adm">
-                        <a class="user-p-adm" href=""><i class="fa-solid fa-user"></i>
+                        <a class="user-p-adm" href="./login"><i class="fa-solid fa-user"></i>
                             <h2>Login</h2>
                         </a>
                     </div>
@@ -68,6 +68,10 @@
                                  <div class="Preco-produto">
                                     <h3>descricao</h3>
                                     <input type="text" name="descricao" >
+                                </div>
+                                <div class="Preco-produto">
+                                    <h3>Quantidade</h3>
+                                    <input type="text" name="quantidade" >
                                 </div>
                                 <div>
                                     <button type="submit">Cadastrar</button>

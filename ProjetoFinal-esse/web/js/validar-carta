@@ -1,0 +1,40 @@
+ function validarCampos() {
+            var numeroCartao = document.getElementById('numero-cartao').value.trim();
+            var nomeCartao = document.getElementById('nome-cartao').value.trim();
+            var mesCartao = document.getElementById('mes-cartao').value;
+            var anoCartao = document.getElementById('ano-cartao').value;
+            var cvv = document.getElementById('cvv').value.trim();
+            var cpf = document.getElementById('cpf').value.trim();
+
+            // Validar número do cartão (16 dígitos)
+            if (numeroCartao.length !== 16 || isNaN(numeroCartao)) {
+                alert('Número do cartão inválido. Insira 16 dígitos numéricos.');
+                document.getElementById('numero-cartao').classList.add('invalid');
+                return;
+            }
+
+            // Validar nome do cartão (maiusculo)
+            if (!nomeCartao.match(/^[A-Z ]+$/)) {
+                alert('Nome do cartão deve conter apenas letras e estar em maiúsculo.');
+                document.getElementById('nome-cartao').classList.add('invalid');
+                return;
+            }
+
+            // Validar CVV (3 dígitos)
+            if (cvv.length !== 3 || isNaN(cvv)) {
+                alert('CVV inválido. Insira 3 dígitos numéricos.');
+                document.getElementById('cvv').classList.add('invalid');
+                return;
+            }
+
+            // Validar CPF (11 dígitos)
+            if (cpf.length !== 11 || isNaN(cpf)) {
+                alert('CPF inválido. Insira 11 dígitos numéricos.');
+                document.getElementById('cpf').classList.add('invalid');
+                return;
+            }
+
+            // Se tudo estiver válido, prosseguir com o pagamento
+            alert('Campos validados com sucesso! Efetuar pagamento...');
+            // Aqui você pode adicionar a lógica para efetuar o pagamento
+        }

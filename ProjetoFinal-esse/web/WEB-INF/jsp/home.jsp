@@ -28,12 +28,12 @@
                 <u class="nav-list">
 
 
-                    <a href="./Tela_Vinhos2">
+                    
                         <li>Vinhos </li>
-                    </a>
-                    <a href="./Tela_Perfumes">
+                   
+                   
                         <li>Perfumes </li>
-                    </a>
+                    
                 </u>
                 <div class="icones-header2">
                     <div class="buscar-icone">
@@ -44,7 +44,7 @@
                             <c:when test="${adm == true}">
                                 <div class="perfil-tela-adm">
                                     <form action="sair" method="post">
-                                            <button type="submit"><i class="fa-solid fa-gear"></i></button>
+                                        <a href="./telaadm"><i class="fa-solid fa-gear"></i></a>
                                             <a href="./carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
                                         </form>
                             </c:when>
@@ -88,7 +88,7 @@
                             <img class="d-block w-100" src="./img/o.21479.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="..." alt="Third slide">
+                            <img class="d-block w-100" src="./img/Banner-Marca-PacoRabanne.webp" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
@@ -117,6 +117,9 @@
                                         class="fa-solid fa-cart-shopping"></i></button>
                             </form>
                         </div>
+                        <div class="preco-produto">
+                            <h5>R$${produto.valor}0</h5>
+                        </div>
                     </div>
                 </c:forEach>
             </div>
@@ -128,24 +131,21 @@
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Footer text</h5>
+                        <h5 class="text-uppercase">QUEM SOMOS?</h5>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                            voluptatem veniam, est atque cumque eum delectus sint!
+                            Bem-vindo a nossa loja, aqui temos varias opcoes de vinho para voce e perfumes para ficar cheiroso!
                         </p>
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Footer text</h5>
+                        <h5 class="text-uppercase">LOCALIZACAO</h5>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                            voluptatem veniam, est atque cumque eum delectus sint!
+                            nossa loja fica localizada na rua maranhao 280 
+                            no centro de lodrina parana
                         </p>
                     </div>
                     <!--Grid column-->
